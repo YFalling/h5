@@ -1,0 +1,292 @@
+html, body{
+	font-family: Arial, sans-serif, 楷体;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+body{
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	overflow: hidden;
+}
+p{ padding: 1rem 1.4rem; margin: 0; font-size: 1rem;}
+
+/*  背景高斯模糊  */
+.bg_layer{ position: fixed; width: 100%; height: 100%;}
+.bg_layer_img{
+	position: relative;
+	width: 110%;
+	height: 110%;
+	left: -5%;
+	top: -5%;
+	z-index: 0;
+	-webkit-filter:blur(10px);-moz-filter:blur(10px);filter:blur(10px);
+}
+.bg_layer_color{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.3);
+}
+
+#main{
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    height: 100%;
+    max-height: 800px;
+    margin: 0 auto;
+}
+
+#box_top{
+	position: relative;
+	width: 100%;
+	height: 4rem;
+	margin: 0 auto;
+	border-bottom: 1px solid rgba(255,255,255,0.2);
+	z-index: 9;
+}
+.m_title{
+	color: rgba(255,255,255,0.9);
+	margin: 0;
+	padding: 0;
+    font-size: 1.05rem;
+	height: 4rem;
+	line-height: 4rem;
+	text-align: center;
+}
+#box_center{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	margin: 0 auto;
+	z-index: 0;
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+.cd{
+    position: relative;
+    margin: 0;
+    width: 15rem;
+    height: 15rem;
+    margin-bottom: 3rem;
+    border-radius: 15rem;
+    border: 5px solid rgba(255,255,255,0.8);
+    overflow: hidden;
+}
+	.cd_play{
+		-webkit-animation: u_cicle 10s linear infinite;
+		animation: u_cicle 10s linear infinite;
+	}
+		@-webkit-keyframes u_cicle
+		{
+			0%{ -webkit-transform: rotate(0deg);}
+			100%{ -webkit-transform: rotate(360deg);}
+		}
+		@keyframes u_cicle
+		{
+			0%{ transform: rotate(0deg);}
+			100%{ transform: rotate(360deg);}
+		}
+	.cd_img{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+	
+#box_bottom{
+	position: absolute;
+	width: 100%;
+	height: 6rem;
+	left: 0;
+	bottom: 0;
+	margin: 0;
+	z-index: 9;
+}
+
+
+/*  音乐  */
+.music{
+    position: relative;
+    width: 15rem;
+    height: 3.5rem;
+	margin: 0 auto;
+    z-index: 1000;
+}
+.open{ background: url(../img/music_pause.png);}
+.close{ background: url(../img/music_play.png);}
+.pre{ background: url(../img/music_pre.png);}
+.next{ background: url(../img/music_next.png);}
+.icon-music, .icon-m{
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 0.75rem;
+    display: block;
+    float: left;
+    background-size: 100% 100%;
+}
+.music_text{
+    color: #f1ebcc;
+    margin-left: 5px;
+    font-size: 20px;
+    opacity: 0;
+}
+.show_hide{}
+
+.music_lyric{
+    position: relative;
+    width: 100%;
+    height: auto;
+	left: 0;
+	top: 0;
+    overflow: hidden;
+}
+/*  歌词滑动覆盖层  */
+.hidden_layer{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 99999;
+}
+/*  歌词同步  */
+.lyric_t{
+	position: absolute;
+	width: 100%;
+	height: 5rem;
+	bottom: 0;
+	left: 0;
+	padding-top: 0.8rem;
+	overflow: hidden;
+}
+
+#musicContent{
+    position: relative;
+    width: 80%;
+    height: auto;
+	left: 0;
+	top: 0;
+	margin: 0 auto;
+    overflow: hidden;
+}
+	#musicContent span{
+		width: 78%;
+		height: auto;
+		margin: 0;
+		padding: 0;
+		float: left;
+		line-height: 1.8rem;
+		text-align: left;
+		font-family: Aial, 楷体;
+		font-weight: 400;
+		display: block;
+	}
+	.musicContent01,.musicContent03{
+		font-size: 1rem;
+		color: rgba(255,255,255,0.6);
+		text-shadow: 3px 2px 3px #000;
+	}
+	.musicContent02{
+		font-size: 1rem;
+		color: rgba(255,255,255,0.8);
+		text-shadow: 3px 2px 3px #000;
+	}
+.m_user{
+	position: relative;
+	width: 3.2rem;
+	height: 3.2rem;
+	left: 0;
+	padding-right: 5px;
+	line-height: 1.8rem;
+	float: left;
+	color: #fff;
+	font-family: Aial, 楷体;
+	font-weight: 400;
+	font-size: 1rem;
+	text-shadow: 3px 2px 3px #000;
+	text-decoration: underline;
+	
+}
+.btn{
+    position: absolute;
+    width: 0.3rem;
+    height: 0.3rem;
+    background: #fff;
+    border-radius: 0.3rem;
+    top: -0.3rem;
+}
+.time{
+    position: absolute;
+    width: 100%;
+    top: 2px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 400;
+}  
+	.now_time{ float: left; padding-left: 5px;}
+	.all_time{ float: right; padding-right: 5px;}
+	
+.time_progress{
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+.progress{
+	position: relative;
+	width: 100%;
+	height: 1px;
+    background: rgba(255,255,255,0.2);
+}
+.bar{
+    position: absolute;
+    width: 0;
+    height: 1px;
+    top: 0;
+    left: 0;
+	padding: 0;
+    background: rgba(255,255,255,0.6);
+    display: block;
+}
+
+
+@media only screen and (min-width: 320px) and (max-width: 359px){ html{ font-size: 13px;}}
+@media only screen and (min-width: 360px) and (max-width: 374px){ html{ font-size: 14px;}}
+@media only screen and (min-width: 375px) and (max-width: 413px){ html{ font-size: 16px;}}
+@media only screen and (min-width: 414px) and (max-width: 736px){ html{ font-size: 18px;}}
+@media only screen and (min-width: 736px){ html{ font-size: 20px;}}

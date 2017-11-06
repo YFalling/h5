@@ -1,0 +1,328 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>你这么孤独，确定不来几首音乐？</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"/>
+<link rel="stylesheet" href="./css/style.css"/>
+</head>
+<body>
+<!-- 背景高斯模糊 -->
+<div class="bg_layer">
+	<div class="bg_layer_img" style="background:url('./img/1.jpg') no-repeat center center;background-size:cover;"></div>
+	<div class="bg_layer_color"></div>
+</div>
+<div id="main">
+	
+	<div id="box_top">
+		<p class="m_title">Chiru(Saisei No Uta) - Robert De Boron</p>
+	</div>
+	
+	<div id="box_center" number="1">
+		<!-- 音乐CD -->
+		<div class="cd cd_play">
+			<img class="cd_img" src="./img/1.jpg"/>
+		</div>
+		<!-- 音乐歌词 -->
+		<div class="music_lyric" style="display:none;">
+			<div class="hidden_layer"></div>
+			<div id="musicContent">
+				<div class="m_user">无名:</div>
+			<!-- <span class="musicContent01"></span> -->
+				<span class="musicContent02"></span>
+			<!-- <span class="musicContent03"></span> -->
+			</div>
+		</div>
+	</div>
+	
+	<div id="box_bottom">
+		<!-- 歌词 -->
+		<div class="lyric_t">
+			<!-- 播放器 -->
+			<div class="music">
+				<i class="icon-m pre"></i>
+				<i class="icon-music open" num="1"></i>
+				<i class="icon-m next"></i>
+				<audio id="my_audio" number="1" src="./audio/1.mp3" loop="loop" preload="" autoplay="autoplay"></audio>
+			</div>
+			<div class="time">
+				<span class="now_time" id="now_time">00:00</span>
+				<span class="all_time" id="all_time">00:00</span>
+			</div>
+			<div class="time_progress">
+				<div class="progress">
+					<p class="bar" id="bar"></p>
+					<div class="btn" id="btn"></div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+</div>
+
+<!-- 引入JS文件 -->
+<script src="./js/jquery.js"></script>
+<script src="./js/song.js"></script>
+
+<!-- 微信audio自动触发 -->
+<script type="text/javascript">
+	// 音乐播放
+	function autoPlayMusic() {
+		// 自动播放音乐效果，解决浏览器或者APP自动播放问题
+		function musicInBrowserHandler() {
+			musicPlay(true);
+			document.body.removeEventListener('touchstart', musicInBrowserHandler);
+		}
+		document.body.addEventListener('touchstart', musicInBrowserHandler);
+
+		// 自动播放音乐效果，解决微信自动播放问题
+		function musicInWeixinHandler() {
+			musicPlay(true);
+			document.addEventListener("WeixinJSBridgeReady", function () {
+				musicPlay(true);
+			}, false);
+			document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+		}
+		document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+	}
+	function musicPlay(isPlay) {
+		var audio = document.getElementById('my_audio');
+		if (isPlay && audio.paused) {
+			audio.play();
+		}
+		if (!isPlay && !audio.paused) {
+			audio.pause();
+		}
+	}
+	autoPlayMusic();
+</script>
+
+<!-- 音乐 CD/歌词 切换 -->
+<script>
+// 播放按钮
+$(".icon-music").click(function(){
+	if($(".icon-music").attr("num") == "1"){
+		$(".icon-music").removeClass("open");
+		$(".icon-music").addClass("close");
+		$(".icon-music").attr("num","2")
+		document.getElementById("my_audio").pause();
+		$(".music_text").html("关闭");
+		$(".music_text").addClass("show_hide");
+		setTimeout(musicHide,2000);
+		$(".cd").removeClass("cd_play");
+	}else{
+		$(".icon-music").attr("num","1");
+		$(".icon-music").addClass("open");
+		$(".icon-music").removeClass("close");
+		document.getElementById("my_audio").play();
+		$(".music_text").html("开启");
+		$(".music_text").addClass("show_hide");
+		setTimeout(musicHide,2000);
+		$(".cd").addClass("cd_play");
+	}
+	function musicHide(){
+		$(".music_text").removeClass("show_hide");
+	}
+});
+
+// 上一首
+$(".pre").click(function(){
+	if($("#my_audio").attr("number") == "1"){
+		$("#my_audio").attr("number","3")
+		$("#my_audio").attr("src", "./audio/3.mp3");
+		$(".cd_img").attr("src","./img/3.jpg")
+		$(".bg_layer_img").css("background","url('./img/3.jpg') no-repeat center center");
+		$(".bg_layer_img").css("background-size","cover");
+		$(".m_title").html("Cry For The Moon - 出羽良彰");
+	}else if($("#my_audio").attr("number") == "2"){
+		$("#my_audio").attr("number","1")
+		$("#my_audio").attr("src", "./audio/1.mp3");
+		$(".cd_img").attr("src","./img/1.jpg")
+		$(".bg_layer_img").css("background","url('./img/1.jpg') no-repeat center center");
+		$(".bg_layer_img").css("background-size","cover");
+		$(".m_title").html("Chiru(Saisei No Uta) - Robert De Boron");
+	}else if($("#my_audio").attr("number") == "3"){
+		$("#my_audio").attr("number","2")
+		$("#my_audio").attr("src", "./audio/2.mp3");
+		$(".cd_img").attr("src","./img/2.jpg")
+		$(".bg_layer_img").css("background","url('./img/2.jpg') no-repeat center center");
+		$(".bg_layer_img").css("background-size","cover");
+		$(".m_title").html("寂静之空 - 傅许");
+	}
+});
+
+// 下一首
+$(".next").click(function(){
+	if($("#my_audio").attr("number") == "1"){
+		$("#my_audio").attr("number","2")
+		$("#my_audio").attr("src", "./audio/2.mp3");
+		$(".cd_img").attr("src","./img/2.jpg")
+		$(".bg_layer_img").css("background","url('./img/2.jpg') no-repeat center center");
+		$(".bg_layer_img").css("background-size","cover");
+		$(".m_title").html("寂静之空 - 傅许");
+	}else if($("#my_audio").attr("number") == "2"){
+		$("#my_audio").attr("number","3")
+		$("#my_audio").attr("src", "./audio/3.mp3");
+		$(".cd_img").attr("src","./img/3.jpg")
+		$(".bg_layer_img").css("background","url('./img/3.jpg') no-repeat center center");
+		$(".bg_layer_img").css("background-size","cover");
+		$(".m_title").html("Cry For The Moon - 出羽良彰");
+	}else if($("#my_audio").attr("number") == "3"){
+		$("#my_audio").attr("number","1")
+		$("#my_audio").attr("src", "./audio/1.mp3");
+		$(".cd_img").attr("src","./img/1.jpg")
+		$(".bg_layer_img").css("background","url('./img/1.jpg') no-repeat center center");
+		$(".bg_layer_img").css("background-size","cover");
+		$(".m_title").html("Chiru(Saisei No Uta) - Robert De Boron");
+	}
+});
+
+// 切换 CD/歌词
+$("#box_center").click(function(){
+	if($(this).attr("number") == "1"){
+		$(this).attr("number","2");
+		$(".cd").css("display","none");
+		$(".music_lyric").css("display","-webkit-inline-box");
+	}else if($(this).attr("number") == "2"){
+		$(this).attr("number","1");
+		$(".music_lyric").css("display","none");
+		$(".cd").css("display","-webkit-inline-box");
+	}
+});
+</script>
+
+<!-- 歌词JS -->
+<script type="text/javascript">
+	var my_audio = document.getElementById("my_audio");
+	var p_all=$(".progress").width();
+	var startX = startY = endX = endY = 0;
+	
+	//暂停或播放
+	function playPause()
+	{
+		if(my_audio.paused){
+			my_audio.play();
+		}
+		else{
+			my_audio.pause();
+		}
+	}
+	
+	var lyric = parseLyric(songContent);
+	//显示歌词的元素
+	lyricContainer = document.getElementById('musicContent');
+	//audio播放的时候实时获取当前播放时间
+	my_audio.ontimeupdate = function()
+	{
+		//获取当前播放时间
+		document.getElementById("now_time").innerHTML = timeFormat(my_audio.currentTime);
+		//当前的长度
+		now_long=my_audio.currentTime/my_audio.duration*p_all;
+		$(".bar").css({width:now_long});
+		var btn_l=now_long-10+'px';
+		$(".btn").css({left:btn_l});
+		//遍历所有歌词，看哪句歌词的时间与当然时间吻合
+		for (var i = 0, l = lyric.length; i < l; i++) {
+			if (this.currentTime /*当前播放的时间*/ > lyric[i][0]) {
+				//显示到页面
+//		            lyricContainer.textContent = lyric[i][1];
+				if(i>=1){
+				//	$(".musicContent01").html(lyric[i-1][1]);
+		            $(".musicContent02").html(lyric[i][1]);
+		         //   $(".musicContent03").html(lyric[i+1][1]);
+				}else{
+		            $(".musicContent02").html(lyric[i][1]);
+		         //   $(".musicContent03").html(lyric[i+1][1]);
+				}
+		};
+		addListenTouch();
+	};
+};
+
+	//页面一旦加入就获取audio的总时间
+	my_audio.onprogress = function()
+	{
+		document.getElementById("all_time").innerHTML = timeFormat(my_audio.duration);
+		//总的长度
+	};	
+	// Time format converter - 00:00//时间格式转换器- 00:00
+	var timeFormat = function(seconds){
+		var m = Math.floor(seconds/60)<10 ? "0"+Math.floor(seconds/60) : Math.floor(seconds/60);
+		var s = Math.floor(seconds-(m*60))<10 ? "0"+Math.floor(seconds-(m*60)) : Math.floor(seconds-(m*60));
+		return m+":"+s;
+	};	
+	//手动拉拽进度条的部分
+function addListenTouch(){
+	//var speed=$('.had-play');
+	var btn=document.getElementById("btn");
+	document.getElementById("btn").addEventListener("touchstart", touchStart, false);
+	document.getElementById("btn").addEventListener("touchmove", touchMove, false);
+	document.getElementById("btn").addEventListener("touchend", touchEnd, false);
+	document.getElementById("musicContent").addEventListener("touchstart", touchStart, false);
+	document.getElementById("musicContent").addEventListener("touchmove", touchMove, false);
+	document.getElementById("musicContent").addEventListener("touchend", touchEnd, false);
+}
+function touchStart(e){
+	e.preventDefault();
+	var touch=e.touches[0];
+	startX=touch.pageX;
+	my_audio.pause();
+	document.getElementById("all_time").innerHTML = timeFormat(my_audio.duration);	
+	//歌词区域touch移动距离
+	var touchSong = e.targetTouches[0];
+	startSongX = touchSong.pageX;
+	startSongY = touchSong.pageY;
+	}
+function touchMove(e){//滑动
+	e.preventDefault();
+	var touch=e.touches[0];
+	x=touch.pageX-startX//滑动的距离
+	//btn.style.webkitTransform='translate('+0+'px,'+y+'px)';
+	var widthBar=now_long+x;
+	//
+	$(".bar").css({width:widthBar});
+	if(widthBar<p_all)
+		{
+		//	
+		$("#btn").css({left:widthBar-10+'px'});
+		$("#bar").css({width:widthBar});	
+		}//不让进度条超出页面
+	//歌词区域touch移动距离
+	var touchSong = e.targetTouches[0];
+	endSongX = touchSong.pageX;
+	endSongY = touchSong.pageY;
+   
+	var yu=widthBar/p_all*my_audio.duration;
+	document.getElementById("now_time").innerHTML = timeFormat(yu);
+	}
+function touchEnd(e){//手指离开屏幕
+	e.preventDefault();//取消事件的默认动作
+	now_long=parseInt(btn.style.left);
+	var touch=e.touches[0];
+	var dragPaddingLeft=btn.style.left;
+	var change=dragPaddingLeft.replace("px","");
+	numDragpaddingLeft=parseInt(change);
+	//console.log(numDragpaddingLeft);
+	var currentTimeNew=(numDragpaddingLeft/(p_all-20)*my_audio.duration);
+//		if(endSongX&&startSongX){
+//			if((endSongY-startSongY)<0){
+//				
+//				currentTimeNew = currentTimeNew - (parseInt(endSongY-startSongY))/80*my_audio.duration;
+//			}
+//			currentTimeNew = (endSongY-startSongY)/80*my_audio.duration;
+//		}
+	
+	my_audio.currentTime = currentTimeNew;
+	//console.log(currentTimeNew);
+	//console.log(timeFormat(currentTimeNew));
+	document.getElementById("now_time").innerHTML = timeFormat(currentTimeNew);
+	my_audio.play();
+	document.getElementById("all_time").innerHTML = timeFormat(my_audio.duration);	
+	console.log("垂直移动距离=    "+(endSongY-startSongY));
+}
+</script>
+
+	
+</body>
+</html>
