@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>A4工作室 - 米兰A4工作室，专注创意设计与开发。</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+
+<!-- Link Swiper's CSS -->
+<link rel="stylesheet" href="css/swiper.min.css"/>
+<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/anime.css"/>
+
+<script src="js/jquery-1.11.0.min.js"></script>
+<script src="js/swiper.jquery.min.js"></script>
+
+</head>
+<body>
+
+	<!-- 左上角LOGO -->
+	<img class="to_fade a4_logo" src="img/a4studio_1.png"/>
+	
+    <!-- Swiper -->
+    <div class="swiper-container">
+	<div style=" position:fixed; width:100%; height:100%; background:url('img/001.jpg') no-repeat center center; background-size:cover; z-index:0; -webkit-filter:blur(5px);-moz-filter:blur(5px);filter:blur(5px);"></div>
+        <div class="swiper-wrapper">
+		
+            <div class="swiper-slide p1">
+				<!-- 右下角版权 -->
+				<p style="position:fixed;min-width:120px;bottom:0.8rem;right:1rem;margin:0;text-align:right;color:rgba(255,255,255,0.9);font-size:14px;">Copyright © 2017 A4 STUDIO.</p>
+				
+				<!-- 背景粒子特效 -->
+				<div class="to_point"></div>
+				<div class="to_point1"></div>
+				<div class="to_point2"></div>
+				<div class="to_point3"></div>
+				<div class="to_point4"></div>
+				<div class="to_point5"></div>
+				<div class="to_point6"></div>
+				<div class="to_point7"></div>
+				
+				<div class="d_box" style="width:70%;max-width:400px;">
+					<!-- 内容 -->
+					<img class="to_big contain" src="img/00.png" style="background:url('img/1.1.png') no-repeat center center;background-size:contain;"/>
+					<img class="to_left contain" src="img/00.png" style="background:url('img/1.2.png') no-repeat center center; background-size:contain;"/>
+					<img class="to_right contain" src="img/00.png" style="background:url('img/1.3.png') no-repeat center center; background-size:contain;"/>
+					<img class="to_up contain" src="img/00.png" style="background:url('img/1.4.png') no-repeat center center; background-size:contain;"/>
+				</div>
+			</div>
+			
+			<div class="swiper-slide p1s">
+				
+				<div class="d_box" style="width:70%;max-width:400px;">
+					<!-- 内容 -->
+					<img class="to_big contain" src="img/00.png" style="background:url('img/2.1.png') no-repeat center center;background-size:contain;"/>
+					<img class="to_up contain" src="img/00.png" style="background:url('img/2.2.png') no-repeat center center; background-size:contain;"/>
+					<img class="to_right contain" src="img/00.png" style="background:url('img/2.3.png') no-repeat center center; background-size:contain;"/>
+					<img class="to_left contain" src="img/00.png" style="background:url('img/2.4.png') no-repeat center center; background-size:contain;"/>
+					
+					<!-- 背景转圈特效 -->
+					<img class="to_cicle contain" src="img/00.png" style="background:url('img/2.5.png') no-repeat center center; background-size:contain;"/>
+				</div>
+			</div>
+			
+            <div class="swiper-slide p2">
+				<!-- 棱形渐升特效 -->
+				<div class="to_m">
+					<div class="to_rombo"></div>
+				</div>
+				<div class="to_m1">
+					<div class="to_rombo1"></div>
+				</div>
+				<div class="to_m2">
+					<div class="to_rombo"></div>
+				</div>
+				<div class="to_m3">
+					<div class="to_rombo2"></div>
+				</div>
+				<div class="to_m4">
+					<div class="to_rombo"></div>
+				</div>
+				<div class="to_m5">
+					<div class="to_rombo1"></div>
+				</div>
+				
+				<div class="d_box" style="width:70%;max-width:400px;">
+					<!-- 内容 -->
+					<img class="to_up contain" src="img/00.png" style="background:url('img/5.1.png') no-repeat center center;background-size:contain;"/>
+					<img class="to_down contain" src="img/00.png" style="background:url('img/5.2.png') no-repeat center center; background-size:contain;"/>
+					<img class="to_right contain" src="img/00.png" style="background:url('img/5.3.png') no-repeat center center; background-size:contain;"/>
+				</div>
+			</div>
+			
+            <div class="swiper-slide p3">
+				<!-- 弹幕特效 -->
+				<div class="to_text"><p>网站设计</p></div>
+				<div class="to_text1"><p>H5开发</p></div>
+				<div class="to_text2"><p>网站建设</p></div>
+				<div class="to_text3"><p>UI设计</p></div>
+				<div class="to_text4"><p>营销配套</p></div>
+				<div class="to_text5"><p>平面设计</p></div>
+				
+				<!-- 关于A4工作室 -->
+				<div class="copyright to_fade_l">
+					<div class="a4_about">
+						<img src="img/a4studio_1.png"/>
+						<p>米兰A4工作室 | 您最好的线上品牌推广伙伴</p>
+						<a href="http://a4studio.tk/">查看主页</a>
+					</div>
+				</div>
+			</div>
+			
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+    </div>
+	
+<div class="music">
+    <i class="icon-music open" num="1"></i>
+    <audio id="aud" src="mp3/001.mp3"  loop="loop" autoplay="autoplay"></audio>
+
+<script type="text/javascript">
+	// 音乐播放
+	function autoPlayMusic() {
+	    // 自动播放音乐效果，解决浏览器或者APP自动播放问题
+	    function musicInBrowserHandler() {
+	        musicPlay(true);
+	        document.body.removeEventListener('touchstart', musicInBrowserHandler);
+	    }
+	    document.body.addEventListener('touchstart', musicInBrowserHandler);
+
+	    // 自动播放音乐效果，解决微信自动播放问题
+	    function musicInWeixinHandler() {
+	        musicPlay(true);
+	        document.addEventListener("WeixinJSBridgeReady", function () {
+	            musicPlay(true);
+	        }, false);
+	        document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+	    }
+	    document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+	}
+	function musicPlay(isPlay) {
+	    var audio = document.getElementById('aud');
+	    if (isPlay && audio.paused) {
+	        audio.play();
+	    }
+	    if (!isPlay && !audio.paused) {
+	        audio.pause();
+	    }
+	}
+	autoPlayMusic();
+</script>
+</div>
+    <!-- Swiper JS -->
+    <script src="js/swiper.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        direction: 'vertical',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 30,
+        mousewheelControl: true
+    });
+
+$(".music").click(function(){
+	if($(".icon-music").attr("num") == "1"){
+		$(".icon-music").removeClass("open");
+		$(".icon-music").attr("num","2")
+		$(".music-span").css("display","none");
+		document.getElementById("aud").pause();
+		$(".music_text").html("关闭");
+		$(".music_text").addClass("show_hide");
+		setTimeout(musicHide,2000);
+	}else{
+		$(".icon-music").attr("num","1");
+		$(".icon-music").addClass("open");
+		$(".music-span").css("display","block");
+		document.getElementById("aud").play();
+		$(".music_text").html("开启");
+		$(".music_text").addClass("show_hide");
+		setTimeout(musicHide,2000);
+	}
+	function musicHide(){
+		$(".music_text").removeClass("show_hide");
+	}
+
+});
+
+    </script>
+
+</body>
+</html>
