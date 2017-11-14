@@ -1,0 +1,326 @@
+html, body{
+	font-family: Arial, sans-serif, 楷体;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+body{
+	/* Center slide text vertically */
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	overflow: hidden;
+}
+p{ padding: 1rem 1.4rem; margin: 0; font-size: 1rem;}
+
+/*  背景高斯模糊  */
+.bg_layer{ position: fixed; width: 100%; height: 100%;}
+.bg_layer_img{
+	position: relative;
+	width: 110%;
+	height: 110%;
+	left: -5%;
+	top: -5%;
+	z-index: 0;
+	-webkit-filter:blur(10px);-moz-filter:blur(10px);filter:blur(10px);
+}
+.bg_layer_color{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.3);
+}
+
+
+/*  音乐  */
+.music{
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+	margin: 0 auto;
+    z-index: 1000;
+}
+.open{ background: url(../img/music_pause.png);}
+.close{ background: url(../img/music_play.png);}
+.icon-music, .icon-m{
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin: 0 0.75rem;
+    display: block;
+    float: left;
+    background-size: 100% 100%;
+}
+.music_text{
+    color: #f1ebcc;
+    margin-left: 5px;
+    font-size: 20px;
+    opacity: 0;
+}
+.show_hide{}
+
+.music_lyric{
+    position: absolute;
+    width: 100%;
+    height: auto;
+	left: 0;
+	bottom: -2px;
+    overflow: hidden;
+	z-index: 9999;
+}
+/*  歌词滑动覆盖层  */
+.hidden_layer{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 99999;
+}
+/*  歌词同步  */
+.lyric_t{
+	position: absolute;
+	width: 100%;
+	height: 5rem;
+	bottom: -1px;
+	left: 0;
+	overflow: hidden;
+}
+
+#musicContent{
+    position: relative;
+    width: 100%;
+    height: auto;
+	left: 0;
+	top: 0;
+    overflow: hidden;
+	background: rgba(0,0,0,0.5);
+}
+	#musicContent span{
+		width: 100%;
+		height: auto;
+		margin: 0;
+		padding-bottom: 0.3rem;
+		float: center;
+		line-height: 1.8rem;
+		text-align: center;
+		font-family: Aial, 楷体;
+		font-weight: 400;
+		display: block;
+	}
+	.musicContent01,.musicContent03{
+		font-size: 1rem;
+		color: rgba(255,255,255,0.6);
+		text-shadow: 3px 2px 3px #000;
+	}
+	.musicContent02{
+		font-size: 1rem;
+		color: rgba(255,255,255,0.8);
+		text-shadow: 3px 2px 3px #000;
+	}
+.m_user{
+	position: relative;
+	width: 3.2rem;
+	height: 3.2rem;
+	left: 0;
+	padding-right: 5px;
+	line-height: 1.8rem;
+	float: left;
+	color: #fff;
+	font-family: Aial, 楷体;
+	font-weight: 400;
+	font-size: 1rem;
+	text-shadow: 3px 2px 3px #000;
+	text-decoration: underline;
+	
+}
+.btn{
+    position: absolute;
+    width: 0.3rem;
+    height: 0.3rem;
+    background: #fff;
+    border-radius: 0.3rem;
+    top: -0.3rem;
+}
+.time{
+    position: absolute;
+    width: 100%;
+    top: 2px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 400;
+}  
+	.now_time{ float: left; padding-left: 5px;}
+	.all_time{ float: right; padding-right: 5px;}
+	
+.time_progress{
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+.progress{
+	position: relative;
+	width: 100%;
+	height: 1px;
+    background: rgba(255,255,255,0.2);
+}
+.bar{
+    position: absolute;
+    width: 0;
+    height: 1px;
+    top: 0;
+    left: 0;
+	padding: 0;
+    background: rgba(255,255,255,0.6);
+    display: block;
+}
+
+
+
+
+
+#up{
+    position: relative;
+    width: 100%;
+	max-width: 750px;
+	max-height: 420px;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    display: inline-block;
+    z-index: 99;
+}
+#up_btn{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0);
+	z-index: 99999999;
+}
+.dy{
+    margin-top: 57%;
+}
+#banner{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+	margin: 0 auto;
+	overflow: hidden;
+}
+	#banner ul{
+		position: absolute;
+		list-style-type: none;
+		filter: Alpha(Opacity=80);
+		opacity: 0.8;
+		z-index: 1002;
+		margin: 0;
+		padding: 0;
+		bottom: 3px;
+		right: 5px;
+	}
+	#banner ul li{
+		padding: 0px 8px;
+		float: left;
+		display: block;
+		color: #FFF;
+		background: #6f4f67;
+		cursor: pointer;
+		border: 1px solid #333;
+	}
+	#banner ul li.on{ background-color: #000; }
+	
+#banner_bg{
+	position: absolute;
+	bottom: 5px;
+	left: 5px;
+	height: 22px;
+	z-index: 99;
+	cursor: pointer
+}
+#banner_info{
+	color: rgba(255,255,255,0.6);
+	text-shadow: 3px 2px 3px #000;
+}
+
+#banner_list{
+	position: relative;
+	width: 100%;
+	height: auto;
+	bottom: 0;
+	z-index: 9;
+	cursor: pointer;
+}
+	#banner_list img {
+		width: 100%;
+		height: auto;
+		border: 0px;
+	}
+	#banner_list a{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+.to_pause{}
+.to_play
+{
+	-webkit-animation: t_play 100s linear infinite;
+	animation: t_play 100s linear infinite;
+	-webkit-transfrom: translate3d(0,0,0);
+	transfrom: translate3d(0,0,0);
+}
+	@-webkit-keyframes t_play
+	{
+		0%{ -webkit-transform: scale(1) translateX(0) translateY(0);}
+		10%{ -webkit-transform: scale(1.3) translateX(5%);}
+		20%{ -webkit-transform: scale(1.25) translateY(-5%);}
+		30%{ -webkit-transform: scale(1.3) translateX(5%) translateY(5%);}
+		40%{ -webkit-transform: scale(1.2) translateX(5%);}
+		50%{ -webkit-transform: scale(1.3) translateX(2%);}
+		60%{ -webkit-transform: scale(1.3) translateX(2%) translateY(5%);}
+		70%{ -webkit-transform: scale(1.15) translateX(-1%) translateY(-1%);}
+		80%{ -webkit-transform: scale(1.3) translateX(5%);}
+		90%{ -webkit-transform: scale(1.2) translateY(3%);}
+		100%{ -webkit-transform: scale(1.1) translateX(1%) translateY(1%);}
+	}
+	@keyframes t_play
+	{
+		0%{ transform: scale(1) translateX(0) translateY(0);}
+		10%{ transform: scale(1.3) translateX(5%);}
+		20%{ transform: scale(1.25) translateY(-5%);}
+		30%{ transform: scale(1.3) translateX(5%) translateY(5%);}
+		40%{ transform: scale(1.2) translateX(5%);}
+		50%{ transform: scale(1.3) translateX(2%);}
+		60%{ transform: scale(1.3) translateX(2%) translateY(5%);}
+		70%{ transform: scale(1.15) translateX(-1%) translateY(-1%);}
+		80%{ transform: scale(1.3) translateX(5%);}
+		90%{ transform: scale(1.2) translateY(3%);}
+		100%{ transform: scale(1.1) translateX(1%) translateY(1%);}
+	}
+
+
+@media only screen and (min-width: 320px) and (max-width: 359px){ html{ font-size: 13px;}}
+@media only screen and (min-width: 360px) and (max-width: 374px){ html{ font-size: 14px;}}
+@media only screen and (min-width: 375px) and (max-width: 413px){ html{ font-size: 16px;}}
+@media only screen and (min-width: 414px) and (max-width: 736px){ html{ font-size: 18px;}}
+@media only screen and (min-width: 736px){ html{ font-size: 20px;}}
