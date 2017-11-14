@@ -109,15 +109,15 @@ p{ padding: 1rem 1.4rem; margin: 0; font-size: 1rem;}
 	left: 0;
 	top: 0;
     overflow: hidden;
-	background: rgba(0,0,0,0.5);
+	background: linear-gradient(to top, rgba(0,0,0,0.5), rgba(0,0,0,0));
 }
 	#musicContent span{
 		width: 100%;
 		height: auto;
 		margin: 0;
-		padding-bottom: 0.3rem;
+		padding: 0.3rem 0;
 		float: center;
-		line-height: 1.8rem;
+		line-height: 2rem;
 		text-align: center;
 		font-family: Aial, 楷体;
 		font-weight: 400;
