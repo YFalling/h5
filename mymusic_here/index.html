@@ -13,14 +13,16 @@
 	<div class="bg_layer_color"></div>
 </div>
 
-	<!-- 棱形渐升特效 -->
-	<div class="to_m"><div class="to_rombo"></div></div>
-	<div class="to_m1"><div class="to_rombo1"></div></div>
-	<div class="to_m2"><div class="to_rombo"></div></div>
-	<div class="to_m3"><div class="to_rombo2"></div></div>
-	<div class="to_m4"><div class="to_rombo"></div></div>
-	<div class="to_m5"><div class="to_rombo1"></div></div>
-
+	<div class="to_layer">
+		<!-- 棱形渐升特效 -->
+		<div class="to_m"><div class="to_rombo"></div></div>
+		<div class="to_m1"><div class="to_rombo1"></div></div>
+		<div class="to_m2"><div class="to_rombo"></div></div>
+		<div class="to_m3"><div class="to_rombo2"></div></div>
+		<div class="to_m4"><div class="to_rombo"></div></div>
+		<div class="to_m5"><div class="to_rombo1"></div></div>
+	</div>
+	
 	<!-- 音乐歌词 -->
 	<div class="music_lyric">
 		<div class="hidden_layer"></div>
@@ -49,13 +51,17 @@
 	</div>
 
 
-
 <!-- 引入JS文件 -->
 <script src="./js/jquery.js"></script>
 <script src="./js/song.js"></script>
 
 <!-- 音乐 -->
 <script>
+// 监听事件 - 禁止移动
+document.querySelector('body').addEventListener('touchmove', function (ev) {
+    event.preventDefault();
+});
+
 // 播放按钮
 $(".icon-music").click(function(){
 	if($(".icon-music").attr("num") == "1"){
