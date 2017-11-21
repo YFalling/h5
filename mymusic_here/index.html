@@ -1,0 +1,251 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>我在这里</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"/>
+<link rel="stylesheet" href="./css/style.css"/>
+</head>
+<body>
+<!-- 背景高斯模糊 -->
+<div class="bg_layer">
+	<div class="bg_layer_img" style="background:url('./img/1.jpg') no-repeat center center;background-size:cover;"></div>
+	<div class="bg_layer_color"></div>
+</div>
+
+	<!-- 棱形渐升特效 -->
+	<div class="to_m"><div class="to_rombo"></div></div>
+	<div class="to_m1"><div class="to_rombo1"></div></div>
+	<div class="to_m2"><div class="to_rombo"></div></div>
+	<div class="to_m3"><div class="to_rombo2"></div></div>
+	<div class="to_m4"><div class="to_rombo"></div></div>
+	<div class="to_m5"><div class="to_rombo1"></div></div>
+
+	<!-- 音乐歌词 -->
+	<div class="music_lyric">
+		<div class="hidden_layer"></div>
+		<div id="musicContent">
+			<span class="musicContent02"></span>
+		</div>
+	</div>
+	
+	<!-- 歌词 -->
+	<div class="lyric_t">
+		<!-- 播放器 -->
+		<div class="music" style="display:none;">
+			<i class="icon-music open" num="1"></i>
+			<audio id="my_audio" number="1" src="./audio/1.mp3" loop="loop" preload="" autoplay="autoplay"></audio>
+		</div>
+		<div class="time">
+			<span class="now_time" id="now_time">00:00</span>
+			<span class="all_time" id="all_time">00:00</span>
+		</div>
+		<div class="time_progress">
+			<div class="progress">
+				<p class="bar" id="bar"></p>
+				<div class="btn" id="btn"></div>
+			</div>
+		</div>
+	</div>
+
+
+
+<!-- 引入JS文件 -->
+<script src="./js/jquery.js"></script>
+<script src="./js/song.js"></script>
+
+<!-- 音乐 -->
+<script>
+// 播放按钮
+$(".icon-music").click(function(){
+	if($(".icon-music").attr("num") == "1"){
+		$(".icon-music").removeClass("open");
+		$(".icon-music").addClass("close");
+		$(".icon-music").attr("num","2")
+		document.getElementById("my_audio").pause();
+		$(".music_text").html("关闭");
+		$(".music_text").addClass("show_hide");
+		setTimeout(musicHide,2000);
+		$(".cd").removeClass("cd_play");
+	}else{
+		$(".icon-music").attr("num","1");
+		$(".icon-music").addClass("open");
+		$(".icon-music").removeClass("close");
+		document.getElementById("my_audio").play();
+		$(".music_text").html("开启");
+		$(".music_text").addClass("show_hide");
+		setTimeout(musicHide,2000);
+		$(".cd").addClass("cd_play");
+	}
+	function musicHide(){
+		$(".music_text").removeClass("show_hide");
+	}
+});
+</script>
+
+<!-- 微信audio自动触发 -->
+<script type="text/javascript">
+	// 音乐播放
+	function autoPlayMusic() {
+		// 自动播放音乐效果，解决浏览器或者APP自动播放问题
+		function musicInBrowserHandler() {
+			musicPlay(true);
+			document.body.removeEventListener('touchstart', musicInBrowserHandler);
+		}
+		document.body.addEventListener('touchstart', musicInBrowserHandler);
+
+		// 自动播放音乐效果，解决微信自动播放问题
+		function musicInWeixinHandler() {
+			musicPlay(true);
+			document.addEventListener("WeixinJSBridgeReady", function () {
+				musicPlay(true);
+			}, false);
+			document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+		}
+		document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+	}
+	function musicPlay(isPlay) {
+		var audio = document.getElementById('my_audio');
+		if (isPlay && audio.paused) {
+			audio.play();
+		}
+		if (!isPlay && !audio.paused) {
+			audio.pause();
+		}
+	}
+	autoPlayMusic();
+</script>
+
+<!-- 歌词JS -->
+<script type="text/javascript">
+	var my_audio = document.getElementById("my_audio");
+	var p_all=$(".progress").width();
+	var startX = startY = endX = endY = 0;
+	
+	//暂停或播放
+	function playPause()
+	{
+		if(my_audio.paused){
+			my_audio.play();
+		}
+		else{
+			my_audio.pause();
+		}
+	}
+	
+	var lyric = parseLyric(songContent);
+	//显示歌词的元素
+	lyricContainer = document.getElementById('musicContent');
+	//audio播放的时候实时获取当前播放时间
+	my_audio.ontimeupdate = function()
+	{
+		//获取当前播放时间
+		document.getElementById("now_time").innerHTML = timeFormat(my_audio.currentTime);
+		//当前的长度
+		now_long=my_audio.currentTime/my_audio.duration*p_all;
+		$(".bar").css({width:now_long});
+		var btn_l=now_long-10+'px';
+		$(".btn").css({left:btn_l});
+		//遍历所有歌词，看哪句歌词的时间与当然时间吻合
+		for (var i = 0, l = lyric.length; i < l; i++) {
+			if (this.currentTime /*当前播放的时间*/ > lyric[i][0]) {
+				//显示到页面
+//		            lyricContainer.textContent = lyric[i][1];
+				if(i>=1){
+				//	$(".musicContent01").html(lyric[i-1][1]);
+		            $(".musicContent02").html(lyric[i][1]);
+		         //   $(".musicContent03").html(lyric[i+1][1]);
+				}else{
+		            $(".musicContent02").html(lyric[i][1]);
+		         //   $(".musicContent03").html(lyric[i+1][1]);
+				}
+		};
+		addListenTouch();
+	};
+};
+
+	//页面一旦加入就获取audio的总时间
+	my_audio.onprogress = function()
+	{
+		document.getElementById("all_time").innerHTML = timeFormat(my_audio.duration);
+		//总的长度
+	};	
+	// Time format converter - 00:00//时间格式转换器- 00:00
+	var timeFormat = function(seconds){
+		var m = Math.floor(seconds/60)<10 ? "0"+Math.floor(seconds/60) : Math.floor(seconds/60);
+		var s = Math.floor(seconds-(m*60))<10 ? "0"+Math.floor(seconds-(m*60)) : Math.floor(seconds-(m*60));
+		return m+":"+s;
+	};	
+	//手动拉拽进度条的部分
+function addListenTouch(){
+	//var speed=$('.had-play');
+	var btn=document.getElementById("btn");
+	document.getElementById("btn").addEventListener("touchstart", touchStart, false);
+	document.getElementById("btn").addEventListener("touchmove", touchMove, false);
+	document.getElementById("btn").addEventListener("touchend", touchEnd, false);
+	document.getElementById("musicContent").addEventListener("touchstart", touchStart, false);
+	document.getElementById("musicContent").addEventListener("touchmove", touchMove, false);
+	document.getElementById("musicContent").addEventListener("touchend", touchEnd, false);
+}
+function touchStart(e){
+	e.preventDefault();
+	var touch=e.touches[0];
+	startX=touch.pageX;
+	my_audio.pause();
+	document.getElementById("all_time").innerHTML = timeFormat(my_audio.duration);	
+	//歌词区域touch移动距离
+	var touchSong = e.targetTouches[0];
+	startSongX = touchSong.pageX;
+	startSongY = touchSong.pageY;
+	}
+function touchMove(e){//滑动
+	e.preventDefault();
+	var touch=e.touches[0];
+	x=touch.pageX-startX//滑动的距离
+	//btn.style.webkitTransform='translate('+0+'px,'+y+'px)';
+	var widthBar=now_long+x;
+	//
+	$(".bar").css({width:widthBar});
+	if(widthBar<p_all)
+		{
+		//	
+		$("#btn").css({left:widthBar-10+'px'});
+		$("#bar").css({width:widthBar});	
+		}//不让进度条超出页面
+	//歌词区域touch移动距离
+	var touchSong = e.targetTouches[0];
+	endSongX = touchSong.pageX;
+	endSongY = touchSong.pageY;
+   
+	var yu=widthBar/p_all*my_audio.duration;
+	document.getElementById("now_time").innerHTML = timeFormat(yu);
+	}
+function touchEnd(e){//手指离开屏幕
+	e.preventDefault();//取消事件的默认动作
+	now_long=parseInt(btn.style.left);
+	var touch=e.touches[0];
+	var dragPaddingLeft=btn.style.left;
+	var change=dragPaddingLeft.replace("px","");
+	numDragpaddingLeft=parseInt(change);
+	//console.log(numDragpaddingLeft);
+	var currentTimeNew=(numDragpaddingLeft/(p_all-20)*my_audio.duration);
+//		if(endSongX&&startSongX){
+//			if((endSongY-startSongY)<0){
+//				
+//				currentTimeNew = currentTimeNew - (parseInt(endSongY-startSongY))/80*my_audio.duration;
+//			}
+//			currentTimeNew = (endSongY-startSongY)/80*my_audio.duration;
+//		}
+	
+	my_audio.currentTime = currentTimeNew;
+	//console.log(currentTimeNew);
+	//console.log(timeFormat(currentTimeNew));
+	document.getElementById("now_time").innerHTML = timeFormat(currentTimeNew);
+	my_audio.play();
+	document.getElementById("all_time").innerHTML = timeFormat(my_audio.duration);	
+	console.log("垂直移动距离=    "+(endSongY-startSongY));
+}
+</script>
+
+</body>
+</html>
