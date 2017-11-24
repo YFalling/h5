@@ -93,6 +93,10 @@
 
 <!-- 音乐 CD/歌词 切换 -->
 <script>
+// 监听事件 - 禁止移动
+document.querySelector('body').addEventListener('touchmove', function (ev) {
+    event.preventDefault();
+});
 // 切换 CD/歌词
 $("#box_center").click(function(){
 	if($(this).attr("number") == "1"){
@@ -105,7 +109,7 @@ $("#box_center").click(function(){
 		$(".cd").css("display","-webkit-inline-box");
 	}
 });
-
+// 显示列表
 $(".loop").click(function(){$(".leftlist").css("display","block");});
 $(".leftlist_layer").click(function(){$(".leftlist").css("display","none");});
 </script>
