@@ -9,7 +9,6 @@
 <script src="js/lib/underscore-min.js"></script>
 </head>
 <body>
-<div class="bg_layer_color"></div>
 <div class="to_layer">
 	<!-- 棱形渐升特效 -->
 	<div class="to_m"><div class="to_rombo"></div></div>
@@ -25,26 +24,35 @@
 		<!--<span class="singer"> </span>-->
     </div>
 </header>
-<div class="content">
-    <div class="panelGroup">
-        <div class="panel playlist">
-            <ul class="music_list" id="music_list">
-                <li style="text-align: center;display: block;">加载音乐列表...</li>
-            </ul>
-        </div>
-        <div class="panel lyric">
-            <div class="lyric_wrap">
-                <ul id="lyric">
-                    <li>A4 STUDIO</li>
-                </ul>
-            </div>
-        </div>
-        <div class="panel album">
-            <div class="album_art">
-                <img class="cover"/>
-            </div>
-        </div>
-    </div>
+<div id="box_center" number="2">
+	<!-- 音乐歌词 -->
+	<div class="music_lyric">
+		<div class="hidden_layer"></div>
+		<div class="lyric">
+			<div class="lyric_wrap">
+				<ul id="lyric">
+					<li>A4 STUDIO</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 音乐CD -->
+	<div class="cd" style="display:none;">
+		<div class="album">
+			<div class="album_art">
+				<img class="cover"/>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="leftlist">
+	<div class="leftlist_layer"></div>
+	<div class="playlist">
+		<div class="music_title">歌曲列表</div>
+		<ul class="music_list" id="music_list">
+			<li style="text-align: center;display: block;">加载音乐列表...</li>
+		</ul>
+	</div>
 </div>
 <footer>
     <audio id="player" preload="auto"></audio>
@@ -54,7 +62,7 @@
         <div class="time totalTime">00:00</div>
     </div>
     <div id="playerCtrl">
-        <div><a class="button loop"></a></div>
+        <div><a class="button loop" number="1"></a></div>
         <div><a class="button prev"></a></div>
         <div><a class="button play"></a></div>
         <div><a class="button next"></a></div>
@@ -81,6 +89,25 @@
         <li>演唱：{{singer}}</li>
         <li>专辑：{{album}}</li>
     </ul>
+</script>
+
+<!-- 音乐 CD/歌词 切换 -->
+<script>
+// 切换 CD/歌词
+$("#box_center").click(function(){
+	if($(this).attr("number") == "1"){
+		$(this).attr("number","2");
+		$(".cd").css("display","none");
+		$(".music_lyric").css("display","-webkit-inline-box");
+	}else if($(this).attr("number") == "2"){
+		$(this).attr("number","1");
+		$(".music_lyric").css("display","none");
+		$(".cd").css("display","-webkit-inline-box");
+	}
+});
+
+$(".loop").click(function(){$(".leftlist").css("display","block");});
+$(".leftlist_layer").click(function(){$(".leftlist").css("display","none");});
 </script>
 <script src="js/progessbar.js"></script>
 <script src="js/player.js"></script>
