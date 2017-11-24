@@ -1,0 +1,34 @@
+[{
+  "name":"我就在这里",
+  "composer":" ",
+  "lyrics":" ",
+  "singer":"SoulJa",
+  "album":" ",
+  "type":" ",
+  "cover":"demo/res/1/cd.jpg",
+  "background":"demo/res/1/cd.jpg",
+  "link_url":"demo/res/1/kokoni-iruyo.mp3",
+  "link_lrc":"demo/res/1/kokoni-iruyo.lrc"
+},{
+  "name":"我的世界已坠入爱河",
+  "composer":" ",
+  "lyrics":" ",
+  "singer":"CHiCO",
+  "album":" ",
+  "type":" ",
+  "cover":"demo/res/2/cd.jpg",
+  "background":"demo/res/2/cd.jpg",
+  "link_url":"demo/res/2/我的世界已坠入爱河.mp3",
+  "link_lrc":"demo/res/2/我的世界已坠入爱河.lrc"
+},{
+  "name":"オレンジ/Orange",
+  "composer":" ",
+  "lyrics":" ",
+  "singer":"Hanatan",
+  "album":" ",
+  "type":" ",
+  "cover":"demo/res/3/cd.jpg",
+  "background":"demo/res/3/cd.jpg",
+  "link_url":"demo/res/3/hanatan-orange.mp3",
+  "link_lrc":"demo/res/3/hanatan-orange.lrc"
+}]

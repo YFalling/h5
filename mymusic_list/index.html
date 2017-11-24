@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>你这么孤独，确定不来几首音乐？</title>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1"/>
+<link rel="stylesheet" href="res/style.css"/>
+<script src="js/lib/zepto.min.js"></script>
+<script src="js/lib/underscore-min.js"></script>
+</head>
+<body>
+<div class="bg_layer_color"></div>
+<div class="to_layer">
+	<!-- 棱形渐升特效 -->
+	<div class="to_m"><div class="to_rombo"></div></div>
+	<div class="to_m1"><div class="to_rombo1"></div></div>
+	<div class="to_m2"><div class="to_rombo"></div></div>
+	<div class="to_m3"><div class="to_rombo2"></div></div>
+	<div class="to_m4"><div class="to_rombo"></div></div>
+	<div class="to_m5"><div class="to_rombo1"></div></div>
+</div>
+<header>
+    <div class="playing_info">
+        <span class="songName">A4 STUDIO</span>
+		<!--<span class="singer"> </span>-->
+    </div>
+</header>
+<div class="content">
+    <div class="panelGroup">
+        <div class="panel playlist">
+            <ul class="music_list" id="music_list">
+                <li style="text-align: center;display: block;">加载音乐列表...</li>
+            </ul>
+        </div>
+        <div class="panel lyric">
+            <div class="lyric_wrap">
+                <ul id="lyric">
+                    <li>A4 STUDIO</li>
+                </ul>
+            </div>
+        </div>
+        <div class="panel album">
+            <div class="album_art">
+                <img class="cover"/>
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+    <audio id="player" preload="auto"></audio>
+    <div id="playerProgress">
+        <div class="time currentTime">00:00</div>
+        <div class="progressbar" id="progressbar"><span class="bar"></span></div>
+        <div class="time totalTime">00:00</div>
+    </div>
+    <div id="playerCtrl">
+        <div><a class="button loop"></a></div>
+        <div><a class="button prev"></a></div>
+        <div><a class="button play"></a></div>
+        <div><a class="button next"></a></div>
+        <div><a class="button collect"></a></div>
+    </div>
+</footer>
+<script type="text/html" id="music_list_item">
+    <li>
+        <div class="left">
+            <div class="songName">{{name}}</div>
+            <div class="singer">{{singer}}</div>
+        </div>
+        <div class="right">
+            <span class="stateIcon"></span>
+        </div>
+    </li>
+</script>
+<script type="text/html" id="music_info">
+    <ul>
+        <li class="title">{{name}}</li>
+        <li class="type">{{type}}</li>
+        <li>作曲：{{composer}}</li>
+        <li>作词：{{lyrics}}</li>
+        <li>演唱：{{singer}}</li>
+        <li>专辑：{{album}}</li>
+    </ul>
+</script>
+<script src="js/progessbar.js"></script>
+<script src="js/player.js"></script>
+<script src="js/slidePage.js"></script>
+<script src="js/Lyrics.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
