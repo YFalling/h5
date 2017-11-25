@@ -7,13 +7,13 @@
 <style type="text/css">
 html{ font-family: Arial, sans-serif, 楷体; background: #333;}
 body{ position: absolute; width: 100%; height: 100%; margin: 0; overflow: hidden;display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: -moz-flex; display: flex;-webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; -moz-justify-content: center;justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center;}  
-p{ padding: 1rem 1.4rem; margin: 0; font-size: 1rem;}
-.p1{ color: rgba(0,0,0,0.7);}
-.p2{ color: rgba(255,255,255,0.7);}
+p{ padding: 0 1.4rem 0.8rem 0; margin: 0; font-size: 1rem; line-height: 1.7rem; text-align: right; color: rgba(255,255,255,0.7);}
+.p1{ color: rgba(255,255,255,0.7);}
+.p2{}
 #main{ position: relative; width: 100%; height: 100%;}
 #a4, #a4_layer{ position: absolute; width: 100%; height: 100%; left: 0; top: 0;}
 #a4{ background: #000;}
-#a4_layer{ background: #fff; z-index: 999;}
+#a4_layer{ background: #000; z-index: 999;}
 .a4_box{ position: relative; width: 100%; height: 100%; margin: 0; left: 0; top: 0;display: -webkit-box; display: -ms-flexbox; display: -webkit-flex; display: -moz-flex; display: flex;-webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; -moz-justify-content: center;justify-content: center; -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center;}
 .a4_a{ position: relative; width: 80%; height: 80px; padding-bottom: 40px;}
 .a4_img{ position: relaitive; width: 100%; height: 70px;}
@@ -22,7 +22,7 @@ p{ padding: 1rem 1.4rem; margin: 0; font-size: 1rem;}
 #a4_menu ul{ list-style: none; margin: 0; padding: 0;}
 #a4_menu ul li{ position: relative; width: 1.4rem; height: 0.35rem;}
 .a4_menu_a ul li{ border-top: 1px solid rgba(255,255,255,0.7);}
-.a4_menu_b ul li{ border-top: 1px solid rgba(0,0,0,0.7);}
+.a4_menu_b ul li{ border-top: 1px solid rgba(255,255,255,0.7);}
 @media only screen and (min-width: 320px) and (max-width: 374px){ html{ font-size: 14px;}}
 @media only screen and (min-width: 375px) and (max-width: 413px){ html{ font-size: 16px;}}
 @media only screen and (min-width: 414px){ html{ font-size: 18px;}}
@@ -50,7 +50,7 @@ p{ padding: 1rem 1.4rem; margin: 0; font-size: 1rem;}
 	<div id="a4_layer" style="display:none;">
 		<div class="a4_box">
 			<div class="a4_a">
-				<div class="a4_img" style="background:url('img/a4_text_b.png') no-repeat center center; background-size:contain;"></div>
+				<div class="a4_img" style="background:url('img/a4_text_w.png') no-repeat center center; background-size:contain;"></div>
 			</div>
 		</div>
 		<a id="a4_menu" class="a4_menu_b" onClick="page_b()">
@@ -60,7 +60,9 @@ p{ padding: 1rem 1.4rem; margin: 0; font-size: 1rem;}
 				<li></li>
 			</ul>
 		</a>
-		<div class="a4_text"><p class="p1">A4STUDIO.MILAN@GMAIL.COM</p></div>
+		<div class="a4_text">
+			<p class="p1">WECHAT: a4-studio</br>EMAIL: a4studio.milan@gmail.com</p>
+		</div>
 	</div>
 </div>
 
