@@ -181,6 +181,9 @@ header .playing_info .singer {
     color: rgba(255,255,255,0.6);
     border-top: 1px solid rgba(255,255,255,0.3);
 }
+.copyright a{
+    color: rgba(255,255,255,0.6);
+}
 .playlist {
     position: absolute;
     width: 18rem;
