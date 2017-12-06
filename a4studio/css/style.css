@@ -29,9 +29,6 @@ body{
     z-index: 0;
 	background:url('./img/bg.jpg') no-repeat center center;
 	background-size:cover;
-	-webkit-filter: blur(3px);
-	-moz-filter: blur(3px);
-	filter: blur(3px);
 }
 #top{
 	position: fixed;
