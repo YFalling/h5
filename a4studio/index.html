@@ -16,9 +16,8 @@
 <link rel="stylesheet" href="./css/anime.css"/>
 </head>
 <body>
-<!-- 背景高斯模糊 -->
 <div class="bg_layer">
-	<div class="bg_layer_img" style="background:url('./img/001.jpg') no-repeat center center;background-size:cover;"></div>
+	<div class="bg_layer_img to_bg"></div>
 </div>
 <div class="swiper-container">
 <div class="swiper-wrapper">
@@ -33,19 +32,8 @@
 	</div>
 	<div class="a4_contact" stay="close">
 	</div>
+	<div class="a4_copyright">COPYRIGHT © 2017 A4 STUDIO.</div>
 	<div class="swiper-slide p1">
-		<p style="position:fixed;min-width:120px;bottom:0.8rem;right:1rem;margin:0;text-align:right;color:rgba(255,255,255,0.9);font-size:14px;">COPYRIGHT © 2017 A4 STUDIO.</p>
-		
-		<!-- 背景粒子特效 -->
-		<div class="to_point"></div>
-		<div class="to_point1"></div>
-		<div class="to_point2"></div>
-		<div class="to_point3"></div>
-		<div class="to_point4"></div>
-		<div class="to_point5"></div>
-		<div class="to_point6"></div>
-		<div class="to_point7"></div>
-		
 		<div class="d_box" style="width:60%;max-width:400px;">
 			<!-- 内容 -->
 			<img class="to_big contain" src="img/00.png" style="background:url('img/1.1.png') no-repeat center center;background-size:contain;"/>
@@ -153,6 +141,27 @@ $(".a4_menu").click(function(){
 		$(".menu_b").css("display","none");
 	}
 });
+
+
+if(window.DeviceOrientationEvent){
+	window.addEventListener('deviceorientation', function(event){
+		alpha = event.alpha, beta = event.beta, gamma = event.gamma;
+		
+		if(beta>75){ beta=75;}
+		if(beta<-5){ beta=-5;}
+		
+		if(gamma>45){ gamma=45;}
+		if(gamma<-45){ gamma=-45;}
+		
+		var orizontale = gamma/1.5,
+			verticale = beta/2.5;
+		
+		$("#bg_layer_img").css('transform','translateX('+orizontale+'%) translateY('+verticale+'%)');
+		
+	}, false);
+}else{
+	document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';
+}
 </script>
 </body>
 </html>
