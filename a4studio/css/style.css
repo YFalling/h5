@@ -45,29 +45,82 @@ body{
     margin: 0 auto;
 	margin-right: 3rem;
     display: inline-block;
+	background:url('./img/a4studio_1.png') no-repeat center center;
+	background-size:contain;
 }
 .a4_menu{
     position: absolute;
-    width: 4rem;
+    width: 3.8rem;
     height: 100%;
     top: 0;
     right: 0;
-	background: #1fd557;
 }
+	.menu_a{ background: #1fd557; display: block;}
+	.menu_b{ background: #fff; display: none;}
+	
 .a4_menu_img{
     position: relative;
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.3rem;
+    height: 1.3rem;
     top: 1rem;
     margin: 0 auto;
     padding: 0;
 }
+	.img_a{
+		background:url('./img/menu_a.png') no-repeat center center;
+		background-size:contain;
+	}
+	.img_b{
+		background:url('./img/menu_b.png') no-repeat center center;
+		background-size:contain;
+	}
+	
+.a4_contact{
+    position: absolute;
+    width: 100%;
+    height: 6rem;
+    margin-top: 3.4rem;
+    background: #fff;
+	display: none;
+	-webkit-animation: t_contact 0.5s ease;
+	animation: t_contact 0.5s ease;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+	@-webkit-keyframes t_contact
+	{
+		0%{ height: 0;}
+		100%{ height: 6rem;}
+	}
+	@keyframes t_contact
+	{
+		0%{ height: 0;}
+		100%{ height: 6rem;}
+	}
 
-.swiper-container {
+	
+.to_bg{
+	-webkit-animation: t_bg 10s linear;
+	animation: t_bg 10s linear;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+	@-webkit-keyframes t_bg
+	{
+		0%{ -webkit-transform: scale(1.3);}
+		100%{ -webkit-transform: scale(1);}
+	}
+	@keyframes t_bg
+	{
+		0%{ transform: scale(1.3);}
+		100%{ transform: scale(1);}
+	}
+
+.swiper-container{
 	width: 100%;
 	height: 100%;
 }
-.swiper-slide {
+.swiper-slide{
 	text-align: center;
 	font-size: 18px;
 	/* Center slide text vertically */
@@ -87,7 +140,7 @@ body{
 	align-items: center;
 	overflow: hidden;
 }
-.swiper-pagination-bullet-active {
+.swiper-pagination-bullet-active{
     opacity: 1;
     background: #1fd557;
 }
@@ -98,19 +151,17 @@ body{
 .p3{ background: url(../img/003.jpg) no-repeat center center; background-size: cover;}
 .p4{ background: url(../img/004.jpg) no-repeat center center; background-size: cover;}
 
-.p1 img,.p1s img, .p2 img, .p3 img, .p4 img{ display: none;}
+.p1 img,.p1s img, .p2 img, .p3 img, .p4 img{display: none;}
 
 /*-- 移动特效 */
 .to_fade, .to_big, .to_up, .to_down, .to_left, .to_right, 
-.to_fade_l, .to_big_l, .to_up_l, .to_down_l, .to_left_l, .to_right_l
-{
+.to_fade_l, .to_big_l, .to_up_l, .to_down_l, .to_left_l, .to_right_l{
 	position: absolute;
 	display: none;
 	-webkit-animation-fill-mode: forwards;
 	animation-fill-mode: forwards;
 }
-.to_fade
-{
+.to_fade{
 	-webkit-animation: t_fad 1.5s ease;
 	animation: t_fad 1.5s ease;
 }
@@ -363,91 +414,10 @@ body{
 	}
 /*  --------------------  */
 
-
-/*音乐*/
-.music{
-    position: absolute;
-    z-index: 1111;
-    left: 1rem;
-    bottom: 0.8rem;
-    z-index: 1000;
+/*  提示用户竖屏浏览页面  */
+@media all and (orientation : landscape ) and (max-height:751px){ 
+html,body{position:relative;overflow:hidden;width:100%;height:100%;padding:0;margin:0;}
+html::before{content:"";position:fixed;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,0.9);z-index:99999;}
+html::after{content:"推荐使用竖屏浏览哦~";text-align:center;font-size:16px;color:#fff;position:absolute;top:50%;left:0;height:30px;width:100%;z-index:99999;}
+body::before{content:"";position:absolute;z-index:99999;height:200px;width:100px;left:50%;top:50%;margin:-140px 0 0 -50px;color:#fff;}
 }
-.open{
-    -webkit-animation: moveRo linear 3.5s  infinite;
-    animation: moveRo linear 3.5s  infinite;
-    -webkit-animation-delay: 0;
-    animation-delay: 0;
-}
-	@-webkit-keyframes moveRo {
-		from{-webkit-transform: rotate(360deg); }
-		to{-webkit-transform: rotate(-360deg);}
-	}
-	@keyframes moveRo {
-		from{transform: rotate(-360deg)}
-		to{transform: rotate(360deg);}
-	}
-.icon-music{
-    width: 25px;
-    height: 25px;
-    background: url(../img/icon-muisc.png);
-    background-size: 100% 100%;
-    display: block;
-}
-.music-span{
-    position: absolute;
-    top: -5px;
-    left: 6px;
-    width: 12px;
-    height: 12px;
-    background: url(../img/music-span.png);
-    background-size: 100% 100%;
-    -webkit-animation: openIconRo ease 1.2s both infinite;
-    animation: openIconRo ease 1.2s both infinite;
-    -webkit-animation: openRo ease 1.2s both infinite;
-    animation: openRo ease 1.2s both infinite;
-    z-index: -1;
-}
-	/*小音符动画*/
-	@-webkit-keyframes openIconRo {
-		0%{-webkit-transform: translateY(100%); opacity:0;}
-		50%{-webkit-transform: translateY(0%); opacity:0.5;}
-		100%{-webkit-transform: translateY(-100%); opacity:0;}
-	}
-	@keyframes openIconRo {
-		0%{-webkit-transform: translateY(100%);
-			transform: translateY(100%);
-			opacity:0;
-		}
-		50%{-webkit-transform: translateY(0%); transform: translateY(0%); opacity:0.5;}
-		100%{-webkit-transform: translateY(-100%); transform: translateY(-100%); opacity:0;}
-	}
-	@-webkit-keyframes openRo {
-		from{}
-		to{-webkit-transform: translateY(100%);}
-	}
-	@keyframes openRo {
-		from{}
-		to{-webkit-transform: translateY(100%) ; transform: translateY(100%);}
-	}
-	
-.music_text{
-    color: #f1ebcc;
-    margin-left: 5px;
-    font-size: 20px;
-    opacity: 0;
-}
-.show_hide{
-    animation: show_hide 1s linear infinite alternate;
-    -webkit-animation: show_hide 1s linear infinite alternate;
-}
-	@keyframes show_hide{
-		from{opacity: 0;}
-		to{opacity: 1;}
-	}
-	@-webkit-keyframes show_hide{
-		from{opacity: 0;}
-		to{opacity: 1;}
-	}
-
-.xin_info{ opacity: 0;}
-.tj { display:none;}
