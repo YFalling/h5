@@ -3,12 +3,11 @@ html,body{
 	height: 100%;
 }
 body{
-	background: #eee;
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif, 楷体, 新宋体; 
 	font-size: 14px;
-	color:#000;
 	margin: 0;
 	padding: 0;
+	background: #000;
 }
 
 /* 开启GPU加速 */
@@ -19,7 +18,16 @@ body{
    -o-transform: translateZ(0);
    transform: translateZ(0);
 }
-
+/*  背景高斯模糊  */
+.bg_layer{ position: fixed; width: 100%; height: 100%;}
+.bg_layer_img{
+	position: relative;
+	width: 110%;
+	height: 110%;
+	left: -5%;
+	top: -5%;
+	z-index: 0;
+}
 #top{
 	position: fixed;
     width: 100%;
@@ -84,7 +92,7 @@ body{
     background: #1fd557;
 }
 
-.p1{ background: url(../img/001.jpg) no-repeat center center; background-size: cover;}
+.p1{}
 .p1s{ background: url(../img/001s.jpg) no-repeat center center; background-size: cover;}
 .p2{ background: url(../img/002.jpg) no-repeat center center; background-size: cover;}
 .p3{ background: url(../img/003.jpg) no-repeat center center; background-size: cover;}
