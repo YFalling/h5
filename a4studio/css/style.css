@@ -120,7 +120,7 @@ body{
 	}
 	.a4_info ul li{
 		width: 100%;
-		line-height: 3.2rem;
+		line-height: 3.6rem;
 		margin: 0;
 		padding: 0;
 		border-bottom: 1px solid rgba(255,255,255,0.1);
@@ -131,7 +131,7 @@ body{
 		width: 100%;
 		height: 100%;
 		margin: 0;
-		font-size: 0.8rem;
+		font-size: 0.9rem;
 		color: rgba(255,255,255,0.5);
 		text-decoration: none;
 		display: block;
@@ -168,22 +168,21 @@ body{
 	}
 
 .more_btn{
-    position: absolute;
-    width: 4.5rem;
-    height: 1.6rem;
+    width: 5.5rem;
+    height: 2rem;
     left: 0;
-    bottom: 2.4rem;
-	line-height: 1.8rem;
-    font-size: 0.8rem;
+    bottom: 2rem;
+    line-height: 2.1rem;
+    font-size: 1rem;
     color: #1fd557;
     border: 1px solid #1fd557;
     border-radius: 4px;
     box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
-.more_btn:hover{
-	background: #1fd557;
-    color: #fff;
-}
+	.more_btn:hover{
+		background: #1fd557;
+		color: #fff;
+	}
 
 
 .swiper-container{
