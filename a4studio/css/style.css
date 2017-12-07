@@ -25,7 +25,7 @@ body{
     width: 200%;
     height: 150%;
 	left: -50%;
-    top: -35%;
+    top: -40%;
     z-index: 0;
 	background:url('./img/bg.jpg') no-repeat center center;
 	background-size:cover;
@@ -36,17 +36,16 @@ body{
 #top{
     position: fixed;
     width: 100%;
-    height: 3.4rem;
+    height: 3.6rem;
     top: 0;
     z-index: 9999;
-    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 .a4_logo{
 	position: relative;
     width: 6rem;
     height: 1.6rem;
     left: 1.25rem;
-    top: 0.9rem;
+    top: 1rem;
     margin: 0;
     display: inline-block;
 	background:url('./img/a4studio_1.png') no-repeat center center;
@@ -66,7 +65,7 @@ body{
     position: relative;
     width: 1.3rem;
     height: 1.3rem;
-    top: 1rem;
+    top: 1.2rem;
     margin: 0 auto;
     padding: 0;
 }
@@ -83,7 +82,7 @@ body{
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.9);
     display: none;
     z-index: 999;
     overflow: hidden;
@@ -102,7 +101,13 @@ body{
 		0%{ opacity: 0;}
 		100%{ opacity: 1;}
 	}
-
+.a4_info{
+    position: relative;
+    width: 100%;
+	height: 10rem;
+	margin-top: 3.6rem;
+	border-top: 1px solid rgba(255,255,255,0.2);
+}
 .a4_copyright{
 	position: absolute;
 	min-width: 120px;
