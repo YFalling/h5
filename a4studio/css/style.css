@@ -96,13 +96,13 @@ body{
 }
 	@-webkit-keyframes t_contact
 	{
-		0%{ height: 0;}
-		100%{ height: 6rem;}
+		0%{ opacity: 0;}
+		100%{ opacity: 1;}
 	}
 	@keyframes t_contact
 	{
-		0%{ height: 0;}
-		100%{ height: 6rem;}
+		0%{ opacity: 0;}
+		100%{ opacity: 1;}
 	}
 .a4_copyright{
 	position: absolute;
