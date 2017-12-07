@@ -132,6 +132,10 @@ $(".a4_menu").click(function(){
 		$(".a4_contact").css("display","block");
 		$(".menu_a").css("display","none");
 		$(".menu_b").css("display","block");
+		// 监听事件 - 禁止移动
+		document.querySelector('body').addEventListener('touchmove', function (ev) {
+			event.preventDefault();
+		});
 	}else if($(".a4_contact").attr("stay")=="open"){
 		$(".a4_contact").attr("stay","close");
 		$(".a4_contact").css("display","none");
