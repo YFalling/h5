@@ -34,21 +34,20 @@ body{
 	filter: blur(3px);
 }
 #top{
-	position: fixed;
+    position: fixed;
     width: 100%;
     height: 3.4rem;
     top: 0;
-    background: rgb(43,46,49);
-    z-index: 99999;
+    z-index: 9999;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
 }
 .a4_logo{
 	position: relative;
-    width: 82%;
+    width: 6rem;
     height: 1.6rem;
-    left: 0;
+    left: 1.25rem;
     top: 0.9rem;
-    margin: 0 auto;
-	margin-right: 3rem;
+    margin: 0;
     display: inline-block;
 	background:url('./img/a4studio_1.png') no-repeat center center;
 	background-size:contain;
@@ -60,8 +59,8 @@ body{
     top: 0;
     right: 0;
 }
-	.menu_a{ background: #1fd557; display: block;}
-	.menu_b{ background: #fff; display: none;}
+	.menu_a{ display: block;}
+	.menu_b{ display: none;}
 	
 .a4_menu_img{
     position: relative;
@@ -83,16 +82,15 @@ body{
 .a4_contact{
     position: absolute;
     width: 100%;
-    height: 6rem;
-    margin-top: 3.4rem;
-    background: #fff;
-	display: none;
-	z-index: 99999;
-	overflow: hidden;
-	-webkit-animation: t_contact 0.5s ease;
-	animation: t_contact 0.5s ease;
-	-webkit-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: none;
+    z-index: 999;
+    overflow: hidden;
+    -webkit-animation: t_contact 0.5s ease;
+    animation: t_contact 0.5s ease;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
 }
 	@-webkit-keyframes t_contact
 	{
@@ -104,11 +102,12 @@ body{
 		0%{ opacity: 0;}
 		100%{ opacity: 1;}
 	}
+
 .a4_copyright{
 	position: absolute;
 	min-width: 120px;
 	bottom: 0.8rem;
-	right: 1rem;
+	right: 1.25rem;
 	margin: 0;
 	font-size: 0.9rem;
 	text-align: right;
