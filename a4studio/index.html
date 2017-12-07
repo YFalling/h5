@@ -19,15 +19,8 @@
 	<div class="bg_layer">
 		<div class="bg_layer_img"></div>
 	</div>
-		<!-- 棱形渐升特效 -->
-		<div class="to_m"><div class="to_rombo"></div></div>
-		<div class="to_m1"><div class="to_rombo1"></div></div>
-		<div class="to_m2"><div class="to_rombo"></div></div>
-		<div class="to_m3"><div class="to_rombo2"></div></div>
-		<div class="to_m4"><div class="to_rombo"></div></div>
-		<div class="to_m5"><div class="to_rombo1"></div></div>
 	<div id="top">
-		<a href="index.html" class="a4_logo"></a>
+		<a href="index.html" class="a4_logo" title="A4 STUDIO - 专注创意设计与开发"></a>
 		<div class="a4_menu menu_a">
 			<div class="a4_menu_img img_a"></div>
 		</div>
@@ -41,10 +34,13 @@
 			<li><a href="index.html" title="首页">首页</a></li>
 			<li><a href="service.html" title="服务">服务</a></li>
 			<li><a href="project.html" title="项目">项目</a></li>
-			<li><a href="contact.html" title="联系">联系方式</a></li>
 			<li><a href="about.html" title="关于">关于我们</a></li>
+			<li><a href="contact.html" title="联系">联系方式</a></li>
 		</ul>
 		</div>
+	</div>
+	<div class="qr_code" stay="close">
+		<div class="qr_code_img"></div>
 	</div>
 	<div class="swiper-container">
 	<div class="swiper-wrapper">
@@ -53,11 +49,11 @@
 			<div class="d_box" style="width:55%;max-width:20rem;height:30%;margin: 0 4rem 5rem 0;">
 				<!-- 内容 -->
 				<img class="a4_text to_fade contain" src="img/00.png"/>
-				<a href="index.html"><div class="more_btn to_fade">MORE</div></a>
+				<a href="index.html"><div class="more_btn to_fade swiper-button-next">MORE</div></a>
 			</div>
 		</div>
 		
-		<div class="swiper-slide p1s" title="首页">
+		<div class="swiper-slide p1s">
 			<div class="d_box" style="width:60%;max-width:400px;">
 				<!-- 内容 -->
 				<img class="to_big contain" src="img/00.png" style="background:url('img/2.1.png') no-repeat center center;background-size:contain;"/>
@@ -84,46 +80,25 @@
 				<div class="a4_about">
 					<img src="./css/img/a4studio_1.png"/>
 					<p>米兰A4工作室 | 您最好的线上品牌推广伙伴</p>
-					<a href="http://a4studio.tk/">查看主页</a>
+					<div class="qr_btn"></div>
 				</div>
 			</div>
 		</div>
 		
 	</div>
+		<div class="swiper-button-next"></div>
 	</div>
 </div>
 
 <script src="./js/jquery.js"></script>
-<script src="./js/swiper.min.js"></script>
 <script src="./js/swiper.jquery.min.js"></script>
 <script>
 var swiper = new Swiper('.swiper-container',{
-	pagination: '.swiper-pagination',
 	direction: 'vertical',
 	slidesPerView: 1,
+	speed:500,
+	nextButton:'.swiper-button-next',
 	mousewheelControl: true
-});
-$(".music").click(function(){
-	if($(".icon-music").attr("num") == "1"){
-		$(".icon-music").removeClass("open");
-		$(".icon-music").attr("num","2")
-		$(".music-span").css("display","none");
-		document.getElementById("aud").pause();
-		$(".music_text").html("关闭");
-		$(".music_text").addClass("show_hide");
-		setTimeout(musicHide,2000);
-	}else{
-		$(".icon-music").attr("num","1");
-		$(".icon-music").addClass("open");
-		$(".music-span").css("display","block");
-		document.getElementById("aud").play();
-		$(".music_text").html("开启");
-		$(".music_text").addClass("show_hide");
-		setTimeout(musicHide,2000);
-	}
-	function musicHide(){
-		$(".music_text").removeClass("show_hide");
-	}
 });
 
 $(".a4_menu").click(function(){
@@ -132,15 +107,24 @@ $(".a4_menu").click(function(){
 		$(".a4_contact").css("display","block");
 		$(".menu_a").css("display","none");
 		$(".menu_b").css("display","block");
-		// 监听事件 - 禁止移动
-		document.querySelector('body').addEventListener('touchmove', function (ev) {
-			event.preventDefault();
-		});
 	}else if($(".a4_contact").attr("stay")=="open"){
 		$(".a4_contact").attr("stay","close");
 		$(".a4_contact").css("display","none");
 		$(".menu_a").css("display","block");
 		$(".menu_b").css("display","none");
+	}
+});
+
+$(".qr_btn").click(function(){
+	if($(".qr_code").attr("stay")=="close"){
+		$(".qr_code").attr("stay","open");
+		$(".qr_code").css("display","block");
+	}
+});
+$(".qr_code").click(function(){
+	if($(".qr_code").attr("stay")=="open"){
+		$(".qr_code").attr("stay","close");
+		$(".qr_code").css("display","none");
 	}
 });
 
