@@ -22,13 +22,16 @@ body{
 .bg_layer{ position: fixed; width: 100%; height: 100%;}
 .bg_layer_img{
 	position: relative;
-    left: -100%;
-    top: -75%;
-    width: 300%;
-    height: 200%;
+    width: 200%;
+    height: 150%;
+	left: -50%;
+    top: -35%;
     z-index: 0;
 	background:url('./img/bg.jpg') no-repeat center center;
 	background-size:cover;
+	-webkit-filter: blur(3px);
+	-moz-filter: blur(3px);
+	filter: blur(3px);
 }
 #top{
 	position: fixed;
@@ -93,13 +96,13 @@ body{
 }
 	@-webkit-keyframes t_contact
 	{
-		0%{ left: 100%;}
-		100%{ left: 0;}
+		0%{ height: 0;}
+		100%{ height: 6rem;}
 	}
 	@keyframes t_contact
 	{
-		0%{ left: 100%;}
-		100%{ left: 0;}
+		0%{ height: 0;}
+		100%{ height: 6rem;}
 	}
 .a4_copyright{
 	position: absolute;

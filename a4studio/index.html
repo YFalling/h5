@@ -6,7 +6,6 @@
 <meta name="copyright" content="A4 STUDIO"/>
 <meta name="keywords" content="A4 STUDIO,A4工作室,设计,广告,品牌">
 <meta name="description" content="A4 STUDIO - 专注创意设计与开发">
-
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"/>
 <link rel="icon" href="./css/img/a4studio.ico" mce_href="./css/img/a4studio.ico" type="image/x-icon"/>  
@@ -18,6 +17,13 @@
 <body>
 <div class="bg_layer">
 	<div class="bg_layer_img"></div>
+	<!-- 棱形渐升特效 -->
+	<div class="to_m"><div class="to_rombo"></div></div>
+	<div class="to_m1"><div class="to_rombo1"></div></div>
+	<div class="to_m2"><div class="to_rombo"></div></div>
+	<div class="to_m3"><div class="to_rombo2"></div></div>
+	<div class="to_m4"><div class="to_rombo"></div></div>
+	<div class="to_m5"><div class="to_rombo1"></div></div>
 </div>
 <div class="swiper-container">
 <div class="swiper-wrapper">
@@ -57,14 +63,6 @@
 	</div>
 	
 	<div class="swiper-slide p2">
-		<!-- 棱形渐升特效 -->
-		<div class="to_m"><div class="to_rombo"></div></div>
-		<div class="to_m1"><div class="to_rombo1"></div></div>
-		<div class="to_m2"><div class="to_rombo"></div></div>
-		<div class="to_m3"><div class="to_rombo2"></div></div>
-		<div class="to_m4"><div class="to_rombo"></div></div>
-		<div class="to_m5"><div class="to_rombo1"></div></div>
-		
 		<div class="d_box" style="width:60%;max-width:400px;">
 			<!-- 内容 -->
 			<img class="to_up contain" src="img/00.png" style="background:url('img/5.1.png') no-repeat center center;background-size:contain;"/>
@@ -146,17 +144,13 @@ if(window.DeviceOrientationEvent){
 	window.addEventListener('deviceorientation', function(event){
 		alpha = event.alpha, beta = event.beta, gamma = event.gamma;
 		
-		var orizontale, verticale;
+		if(beta>70){ beta=70;}
+		if(beta<0){ beta=0;}
+		if(gamma>30){ gamma=30;}
+		if(gamma<-30){ gamma=-30;}
 		
-		if(beta>75){ beta=75;}
-		if(beta<-5){ beta=-5;}
-		
-		if(gamma>45){ gamma=45;}
-		if(gamma<-45){ gamma=-45;}
-		
-		orizontale = gamma/1.5,
-		verticale = beta/2.5;
-		
+		var orizontale = gamma/1.25,
+			verticale = beta/2.9;
 		$(".bg_layer_img").css('transform','translateX('+orizontale+'%) translateY('+verticale+'%)');
 		
 	}, false);

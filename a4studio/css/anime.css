@@ -371,6 +371,7 @@
 		0%{ left: 100%;}
 		100%{ left: -120px;}
 	}
+/*  棱形动效  */
 .to_m, .to_m1, .to_m2, .to_m3, .to_m4, .to_m5{ position: absolute;}
 .to_m{
 	left: 5%;
@@ -379,91 +380,110 @@
 }
 	@-webkit-keyframes t_m
 	{
-		0%{ top: 95%;}
-		100%{ top: 5%;}
+		0%{ top: 95%; -webkit-opacity: 0;}
+		10%{ -webkit-opacity: 1;}
+		100%{ top: 5%; -webkit-opacity: 1;}
 	}
 	@keyframes t_m
 	{
-		0%{ top: 95%;}
-		100%{ top: 5%;}
+		0%{ top: 95%; opacity: 0;}
+		10%{ opacity: 1;}
+		100%{ top: 5%; opacity: 1;}
 	}
 
 .to_m1{
 	left: 30%;
+	top: -5%;
 	-webkit-animation: t_m1 30s linear infinite;
 	animation: t_m1 30s linear infinite;
 }
 	@-webkit-keyframes t_m1
 	{
-		0%{ top: 80%;}
-		100%{ top: 20%;}
+		0%{ top: 80%; -webkit-opacity: 0;}
+		10%{ -webkit-opacity: 1;}
+		100%{ top: 20%; -webkit-opacity: 1;}
 	}
 	@keyframes t_m1
 	{
-		0%{ top: 80%;}
-		100%{ top: 20%;}
+		0%{ top: 80%; opacity: 0;}
+		10%{ opacity: 1;}
+		100%{ top: 20%; opacity: 1;}
 	}
 .to_m2{
 	left: 50%;
+	top: -5%;
 	-webkit-animation: t_m2 35s linear infinite;
 	animation: t_m2 35s linear infinite;
+	-webkit-animation-delay: 3s;
 	animation-delay: 3s;
 }
 	@-webkit-keyframes t_m2
 	{
-		0%{ top: 90%;}
-		100%{ top: 25%;}
+		0%{ top: 90%; -webkit-opacity: 0;}
+		10%{ -webkit-opacity: 1;}
+		100%{ top: 25%; -webkit-opacity: 1;}
 	}
 	@keyframes t_m2
 	{
-		0%{ top: 90%;}
-		100%{ top: 25%;}
+		0%{ top: 90%; opacity: 0;}
+		10%{ opacity: 1;}
+		100%{ top: 25%; opacity: 1;}
 	}
 .to_m3{
 	left: 75%;
+	top: -5%;
 	-webkit-animation: t_m3 20s linear infinite;
 	animation: t_m3 20s linear infinite;
 }
 	@-webkit-keyframes t_m3
 	{
-		0%{ top: 70%;}
-		100%{ top: 30%;}
+		0%{ top: 70%; -webkit-opacity: 0;}
+		10%{ -webkit-opacity: 1;}
+		100%{ top: 30%; -webkit-opacity: 1;}
 	}
 	@keyframes t_m3
 	{
-		0%{ top: 70%;}
-		100%{ top: 30%;}
+		0%{ top: 70%; opacity: 0;}
+		10%{ opacity: 1;}
+		100%{ top: 30%; opacity: 1;}
 	}
 .to_m4{
 	left: 86%;
+	top: -5%;
 	-webkit-animation: t_m4 25s linear infinite;
 	animation: t_m4 25s linear infinite;
 }
 	@-webkit-keyframes t_m4
 	{
-		0%{ top: 100%;}
-		100%{ top: 40%;}
+		0%{ top: 100%; -webkit-opacity: 0;}
+		10%{ -webkit-opacity: 1;}
+		100%{ top: 35%; -webkit-opacity: 1;}
 	}
 	@keyframes t_m4
 	{
-		0%{ top: 100%;}
-		100%{ top: 40%;}
+		0%{ top: 100%; opacity: 0;}
+		10%{ opacity: 1;}
+		100%{ top: 35%; opacity: 1;}
 	}
 .to_m5{
 	left: 28%;
+	top: -5%;
 	-webkit-animation: t_m5 35s linear infinite;
 	animation: t_m5 35s linear infinite;
+	-webkit-animation-delay: 6s;
 	animation-delay: 6s;
 }
 	@-webkit-keyframes t_m5
 	{
-		0%{ top: 100%;}
-		100%{ top: 45%;}
+		0%{ top: 100%; -webkit-opacity: 0;}
+		10%{ -webkit-opacity: 1;}
+		100%{ top: 40%; -webkit-opacity: 1;}
 	}
 	@keyframes t_m5
 	{
-		0%{ top: 100%;}
-		100%{ top: 45%;}
+		0%{ top: 100%; opacity: 0;}
+		10%{ opacity: 1;}
+		100%{ top: 40%; opacity: 1;}
 	}
 	
 .to_rombo
