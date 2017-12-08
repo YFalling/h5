@@ -224,7 +224,23 @@ body{
 		0%{ opacity: 0;}
 		100%{ opacity: 1;}
 	}
-	
+.to_bg{
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+	-webkit-animation: t_bg 5s ease;
+	animation: t_bg 5s ease;
+}
+	@-webkit-keyframes t_bg
+	{
+		0%{ -webkit-transform: scale(1.3);}
+		100%{ -webkit-transform: scale(1);}
+	}
+	@keyframes t_bg
+	{
+		0%{ transform: scale(1.3);}
+		100%{ transform: scale(1);}
+	}
+
 .copyright{
 	position: absolute;
 	width: 100%;
@@ -322,8 +338,8 @@ body{
 	padding: 0;
 	-webkit-transform: scale(1.3);
 	transform: scale(1.3);
-	-webkit-transition: all 9s;
-	transition: all 9s;
+	-webkit-transition: all 9s linear;
+	transition: all 9s linear;
 }
 .s1{ background:url(./img/s1.jpg) no-repeat center center; background-size:cover;}
 .s2{ background:url(./img/s2.jpg) no-repeat center center; background-size:cover;}
