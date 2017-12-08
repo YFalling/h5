@@ -35,11 +35,9 @@ body{
    transform: translateZ(0);
 }
 #wrapper{
-    position: absolute;
+    position: relative;
     width: 100%;
-    max-width: 450px;
     height: 100%;
-    max-height: 800px;
     margin: 0;
     padding: 0;
     overflow: hidden;
