@@ -1,23 +1,19 @@
-html,body{ position: relative; height: 100%;}
+html,body{ position: relative; height: 100%; background: #f3f3f3;}
 body{
 	font-family: Helvetica Neue, Helvetica, Arial, sans-serif, 楷体, 新宋体; 
 	font-size: 14px;
 	margin: 0;
 	padding: 0;
-	background: #f3f3f3;
 	/* Center slide text vertically */
 	display: -webkit-box;
-	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: flex;
 	-webkit-box-pack: center;
-	-ms-flex-pack: center;
 	-webkit-justify-content: center;
 	-moz-justify-content: center;
 	justify-content: center;
 	-webkit-box-align: center;
-	-ms-flex-align: center;
 	-webkit-align-items: center;
 	align-items: center;
 	overflow: hidden;
@@ -224,22 +220,6 @@ body{
 		0%{ opacity: 0;}
 		100%{ opacity: 1;}
 	}
-.to_bg{
-	-webkit-animation-fill-mode: forwards;
-	animation-fill-mode: forwards;
-	-webkit-animation: t_bg 5s ease;
-	animation: t_bg 5s ease;
-}
-	@-webkit-keyframes t_bg
-	{
-		0%{ -webkit-transform: scale(1.3);}
-		100%{ -webkit-transform: scale(1);}
-	}
-	@keyframes t_bg
-	{
-		0%{ transform: scale(1.3);}
-		100%{ transform: scale(1);}
-	}
 
 .copyright{
 	position: absolute;
@@ -323,10 +303,10 @@ body{
     left: 0;
     overflow: hidden;
 }
-.swiper-slide-active .s1,
-.swiper-slide-active .s2,
-.swiper-slide-active .s3,
-.swiper-slide-active .s4{
+.swiper-slide-active .bgwrap .s1,
+.swiper-slide-active .bgwrap .s2,
+.swiper-slide-active .bgwrap .s3,
+.swiper-slide-active .bgwrap .s4{
 	-webkit-transform: scale(1);
 	transform: scale(1);
 }
@@ -355,17 +335,14 @@ body{
 	font-size: 18px;
 	/* Center slide text vertically */
 	display: -webkit-box;
-	display: -ms-flexbox;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: flex;
 	-webkit-box-pack: center;
-	-ms-flex-pack: center;
 	-webkit-justify-content: center;
 	-moz-justify-content: center;
 	justify-content: center;
 	-webkit-box-align: center;
-	-ms-flex-align: center;
 	-webkit-align-items: center;
 	align-items: center;
 	overflow: hidden;
@@ -375,9 +352,9 @@ body{
 .swiper-slide-active div{ display: block; display: inline-block;}
 
 /*  提示用户竖屏浏览页面  */
-@media all and (orientation : landscape ) and (max-height:751px){ 
+@media all and (orientation:landscape) and (max-height:751px){ 
 html,body{position:relative;overflow:hidden;width:100%;height:100%;padding:0;margin:0;}
-html::before{content:"";position:fixed;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,0.9);z-index:99999;}
+html::before{position:fixed;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,0.9);z-index:99999;}
 html::after{content:"推荐使用竖屏浏览哦~";text-align:center;font-size:16px;color:#fff;position:absolute;top:50%;left:0;height:30px;width:100%;z-index:99999;}
 body::before{content:"";position:absolute;z-index:99999;height:200px;width:100px;left:50%;top:50%;margin:-140px 0 0 -50px;color:#fff;}
 }
