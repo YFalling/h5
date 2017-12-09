@@ -19,56 +19,55 @@
 	<div class="bg_layer">
 		<div class="bg_layer_img"></div>
 	</div>
-	<div id="top">
-		<a href="index.html" class="a4_logo" title="A4 STUDIO - 专注创意设计与开发"></a>
-		<div class="a4_menu menu_a">
-			<div class="a4_menu_img img_a"></div>
+	<div class="bgwrap">
+		<div id="topbar">
+			<a href="index.html" class="a4_logo" title="A4 STUDIO - 专注创意设计与开发"></a>
+			<div class="menu_btn menu_a">
+				<div class="menu_img img_a"></div>
+			</div>
+			<div class="menu_btn menu_b">
+				<div class="menu_img img_b"></div>
+			</div>
 		</div>
-		<div class="a4_menu menu_b">
-			<div class="a4_menu_img img_b"></div>
+		<div id="menu" stay="close">
+			<div class="menu-list">
+			<ul>
+				<li><a href="index.html" title="首页">首页</a></li>
+				<li><a href="service.html" title="服务">服务</a></li>
+				<li><a href="project.html" title="项目">项目</a></li>
+				<li><a href="about.html" title="关于">关于我们</a></li>
+				<li><a href="contact.html" title="联系">联系我们</a></li>
+			</ul>
+			</div>
 		</div>
-	</div>
-	<div class="a4_contact" stay="close">
-		<div class="a4_info">
-		<ul>
-			<li><a href="index.html" title="首页">首页</a></li>
-			<li><a href="service.html" title="服务">服务</a></li>
-			<li><a href="project.html" title="项目">项目</a></li>
-			<li><a href="about.html" title="关于">关于我们</a></li>
-			<li><a href="contact.html" title="联系">联系方式</a></li>
-		</ul>
+		<div id="qr_code" stay="close">
+			<div class="qr_code_img"><img class="qr_img" src="./css/img/qr_code.png"/></div>
 		</div>
-	</div>
-	<div class="qr_code" stay="close">
-		<div class="qr_code_img"><img class="qr_img" src="./css/img/qr_code.png"/></div>
 	</div>
 	<div class="swiper-container">
 	<div class="swiper-wrapper">
 		<div class="a4_copyright">COPYRIGHT © 2017 A4 STUDIO.</div>
-		<div class="swiper-slide p1">
+		<div class="swiper-slide">
 			<div class="page_first">
 				<div class="a4_text"></div>
 				<div class="more_btn swiper-button-next">MORE</div>
 			</div>
 		</div>
-		
-		<div class="swiper-slide p1s">
-			<div class="bgwrap">
+		<div class="swiper-slide">
+			<div class="bgwrap bg1">
 				<div class="s1"></div>
+				<div class="page-title"></div>
 			</div>
 		</div>
-		
-		<div class="swiper-slide p2">
-			<div class="bgwrap">
+		<div class="swiper-slide">
+			<div class="bgwrap bg2">
 				<div class="s2"></div>
 			</div>
 		</div>
-		
-		<div class="swiper-slide p3">
-			<div class="bgwrap">
+		<div class="swiper-slide">
+			<div class="bgwrap bg3">
 				<div class="s3"></div>
 			</div>
-			<!-- 关于A4工作室 -->
 			<div class="copyright to_fade_l">
 				<div class="a4_about">
 					<img src="./css/img/a4studio_1.png"/>
@@ -77,7 +76,6 @@
 				</div>
 			</div>
 		</div>
-		
 	</div>
 	</div>
 </div>
@@ -100,7 +98,7 @@
 		if (width > maxWidth) {
 			width = maxWidth;
 		}
-		//与淘宝做法不同，直接采用简单的rem换算方法1rem=27.5px
+		//1rem=27.5px
 		var rem = width * 27.5 / designWidth;
 		//兼容UC开始
 		rootStyle = "html{font-size:" + rem + 'px !important}';
@@ -143,8 +141,7 @@
 		}, false);
 	}
 })(640, 640);
-</script>
-<script>
+
 var swiper = new Swiper('.swiper-container',{
 	direction: 'vertical',
 	slidesPerView: 1,
@@ -152,7 +149,7 @@ var swiper = new Swiper('.swiper-container',{
 	nextButton:'.swiper-button-next',
 	mousewheelControl: true
 });
-
+  
 if(window.DeviceOrientationEvent){
 	window.addEventListener('deviceorientation', function(event){
 		alpha = event.alpha, beta = event.beta, gamma = event.gamma;
@@ -169,32 +166,62 @@ if(window.DeviceOrientationEvent){
 	}, false);
 }else{ document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';}
 
-$(".a4_menu").click(function(){
-	if($(".a4_contact").attr("stay")=="close"){
-		$(".a4_contact").attr("stay","open");
-		$(".a4_contact").css("display","block");
+$(".menu_btn").click(function(){
+	if($("#menu").attr("stay")=="close"){
+		$("#menu").attr("stay","open");
+		$("#menu").css("display","block");
 		$(".menu_a").css("display","none");
 		$(".menu_b").css("display","block");
-	}else if($(".a4_contact").attr("stay")=="open"){
-		$(".a4_contact").attr("stay","close");
-		$(".a4_contact").css("display","none");
+	}else if($("#menu").attr("stay")=="open"){
+		$("#menu").attr("stay","close");
+		$("#menu").css("display","none");
 		$(".menu_a").css("display","block");
 		$(".menu_b").css("display","none");
 	}
 });
 
 $(".qr_btn").click(function(){
-	if($(".qr_code").attr("stay")=="close"){
-		$(".qr_code").attr("stay","open");
-		$(".qr_code").css("display","block");
+	if($("#qr_code").attr("stay")=="close"){
+		$("#qr_code").attr("stay","open");
+		$("#qr_code").css("display","block");
 	}
 });
-$(".qr_code").click(function(){
-	if($(".qr_code").attr("stay")=="open"){
-		$(".qr_code").attr("stay","close");
-		$(".qr_code").css("display","none");
+$("#qr_code").click(function(){
+	if($("#qr_code").attr("stay")=="open"){
+		$("#qr_code").attr("stay","close");
+		$("#qr_code").css("display","none");
 	}
 });
+var t = n =0, count;
+$(document).ready(function(){
+	var time = 3000;
+	count=$("#banner_list a").length;
+	$("#banner_list a:not(:first-child)").hide();
+	$("#banner_info").html($("#banner_list a:first-child").find("img").attr('alt'));
+	$("#banner li").click(function() {
+		var i = $(this).text() -1;//获取Li元素内的值，即1，2，3，4
+		n = i;
+		if (i >= count) return;
+		$("#banner_info").html($("#banner_list a").eq(i).find("img").attr('alt'));
+		$("#banner_list a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(500);
+		document.getElementById("banner").style.background="";
+		$(this).toggleClass("on");
+		$(this).siblings().removeAttr("class");
+	});
+	t = setInterval("showAuto()", time);
+
+	$('#banner_list img').hover(function(){
+		clearInterval(t);
+	},function(){
+		t = setInterval("showAuto()", time);
+	});
+})
+
+function showAuto()
+{
+	n = n >=(count -1) ?0 : ++n;
+	$("#banner li").eq(n).trigger('click');
+}
 </script>
 </body>
 </html>
