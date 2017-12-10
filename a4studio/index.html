@@ -12,6 +12,66 @@
 <link rel="shortcut icon" href="./css/img/a4studio.ico" mce_href="./css/img/a4studio.ico" type="image/x-icon"/>
 <link rel="stylesheet" href="./css/style.css"/> 
 <link rel="stylesheet" href="./css/swiper.min.css"/>
+<script>
+(function (designWidth, maxWidth) {
+	var doc = document,
+		win = window;
+	var docEl = doc.documentElement;
+	var tid;
+	var rootItem, rootStyle;
+
+	function refreshRem() {
+		var width = docEl.getBoundingClientRect().width;
+		if (!maxWidth) {
+			maxWidth = 540;
+		}
+		if (width > maxWidth) {
+			width = maxWidth;
+		}
+		//1rem=27.5px
+		var rem = width * 27.5 / designWidth;
+		//兼容UC开始
+		rootStyle = "html{font-size:" + rem + 'px !important}';
+		rootItem = document.getElementById('rootsize') || document.createElement("style");
+		if (!document.getElementById('rootsize')) {
+			document.getElementsByTagName("head")[0].appendChild(rootItem);
+			rootItem.id = 'rootsize';
+		}
+		if (rootItem.styleSheet) {
+			rootItem.styleSheet.disabled || (rootItem.styleSheet.cssText = rootStyle)
+		} else {
+			try {
+				rootItem.innerHTML = rootStyle
+			} catch (f) {
+				rootItem.innerText = rootStyle
+			}
+		}
+		//兼容UC结束
+		docEl.style.fontSize = rem + "px";
+	};
+	refreshRem();
+
+	win.addEventListener("resize", function () {
+		clearTimeout(tid); //防止执行两次
+		tid = setTimeout(refreshRem, 300);
+	}, false);
+
+	win.addEventListener("pageshow", function (e) {
+		if (e.persisted) { // 浏览器后退的时候重新计算
+			clearTimeout(tid);
+			tid = setTimeout(refreshRem, 300);
+		}
+	}, false);
+
+	if (doc.readyState === "complete") {
+		doc.body.style.fontSize = "16px";
+	} else {
+		doc.addEventListener("DOMContentLoaded", function (e) {
+			doc.body.style.fontSize = "16px";
+		}, false);
+	}
+})(640, 640);
+</script>
 </head>
 <body>
 
@@ -83,65 +143,6 @@
 <script src="./js/jquery.js"></script>
 <script src="./js/swiper.jquery.min.js"></script>
 <script>
-(function (designWidth, maxWidth) {
-	var doc = document,
-		win = window;
-	var docEl = doc.documentElement;
-	var tid;
-	var rootItem, rootStyle;
-
-	function refreshRem() {
-		var width = docEl.getBoundingClientRect().width;
-		if (!maxWidth) {
-			maxWidth = 540;
-		}
-		if (width > maxWidth) {
-			width = maxWidth;
-		}
-		//1rem=27.5px
-		var rem = width * 27.5 / designWidth;
-		//兼容UC开始
-		rootStyle = "html{font-size:" + rem + 'px !important}';
-		rootItem = document.getElementById('rootsize') || document.createElement("style");
-		if (!document.getElementById('rootsize')) {
-			document.getElementsByTagName("head")[0].appendChild(rootItem);
-			rootItem.id = 'rootsize';
-		}
-		if (rootItem.styleSheet) {
-			rootItem.styleSheet.disabled || (rootItem.styleSheet.cssText = rootStyle)
-		} else {
-			try {
-				rootItem.innerHTML = rootStyle
-			} catch (f) {
-				rootItem.innerText = rootStyle
-			}
-		}
-		//兼容UC结束
-		docEl.style.fontSize = rem + "px";
-	};
-	refreshRem();
-
-	win.addEventListener("resize", function () {
-		clearTimeout(tid); //防止执行两次
-		tid = setTimeout(refreshRem, 300);
-	}, false);
-
-	win.addEventListener("pageshow", function (e) {
-		if (e.persisted) { // 浏览器后退的时候重新计算
-			clearTimeout(tid);
-			tid = setTimeout(refreshRem, 300);
-		}
-	}, false);
-
-	if (doc.readyState === "complete") {
-		doc.body.style.fontSize = "16px";
-	} else {
-		doc.addEventListener("DOMContentLoaded", function (e) {
-			doc.body.style.fontSize = "16px";
-		}, false);
-	}
-})(640, 640);
-
 var swiper = new Swiper('.swiper-container',{
 	direction: 'vertical',
 	slidesPerView: 1,
@@ -164,7 +165,7 @@ if(window.DeviceOrientationEvent){
 		$(".bg_layer_img").css('transform','translateX('+orizontale+'%) translateY('+verticale+'%)');
 		
 	}, false);
-}else{ document.querySelector('body').innerHTML = '你的瀏覽器不支援喔';}
+}else{ document.querySelector('body').innerHTML = '你的浏览器不支持哦~';}
 
 $(".menu_btn").click(function(){
 	if($("#menu").attr("stay")=="close"){
@@ -192,36 +193,6 @@ $("#qr_code").click(function(){
 		$("#qr_code").css("display","none");
 	}
 });
-var t = n =0, count;
-$(document).ready(function(){
-	var time = 3000;
-	count=$("#banner_list a").length;
-	$("#banner_list a:not(:first-child)").hide();
-	$("#banner_info").html($("#banner_list a:first-child").find("img").attr('alt'));
-	$("#banner li").click(function() {
-		var i = $(this).text() -1;//获取Li元素内的值，即1，2，3，4
-		n = i;
-		if (i >= count) return;
-		$("#banner_info").html($("#banner_list a").eq(i).find("img").attr('alt'));
-		$("#banner_list a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(500);
-		document.getElementById("banner").style.background="";
-		$(this).toggleClass("on");
-		$(this).siblings().removeAttr("class");
-	});
-	t = setInterval("showAuto()", time);
-
-	$('#banner_list img').hover(function(){
-		clearInterval(t);
-	},function(){
-		t = setInterval("showAuto()", time);
-	});
-})
-
-function showAuto()
-{
-	n = n >=(count -1) ?0 : ++n;
-	$("#banner li").eq(n).trigger('click');
-}
 </script>
 </body>
 </html>
