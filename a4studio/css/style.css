@@ -165,6 +165,7 @@ body{
 	float: left;
     line-height: 2.1rem;
     font-size: 1rem;
+	text-align: center;
     color: #1fd557;
     border: 1px solid #1fd557;
     border-radius: 4px;
@@ -245,6 +246,7 @@ body{
 	min-height: 4rem;
 	margin: 0 auto;
 	padding: 1rem 0 1.2rem 0;
+	text-align: center;
 }
 	.a4_about img{
 		position: relative;
@@ -341,14 +343,8 @@ body{
 	background-size: contain;
 }
 
-.swiper-container{
-	width: 100%;
-	height: 100%;
-}
+.swiper-container{ width: 100%; height: 100%;}
 .swiper-slide{
-	text-align: center;
-	font-size: 18px;
-	/* Center slide text vertically */
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -377,9 +373,7 @@ body{
 		margin: 0 auto;
 		padding: 0;
 	}
-	.service ul li:first-child{
-		margin-top: 0;
-	}
+	.service ul li:first-child{ margin-top: 0;}
 	.service ul li{
 		width: 100%;
 		position: relative;
@@ -392,14 +386,10 @@ body{
 	position: relative;
     float: left;
 }
-.l-icon{
-    width: 1.8rem;
-    height: 1.8rem;
-    margin-top: 0.2rem;
-}
-.l-icon1{ background: url(./img/mobile-phone.png) no-repeat top center; background-size: contain;}
-.l-icon2{ background: url(./img/electronics.png) no-repeat top center;background-size: contain;}
-.l-icon3{ background: url(./img/security.png) no-repeat top center;background-size: contain;}
+.l-icon{ width: 1.8rem; height: 1.8rem; margin-top: 0.2rem;}
+	.l-icon1{ background: url(./img/mobile-phone.png) no-repeat top center; background-size: contain;}
+	.l-icon2{ background: url(./img/electronics.png) no-repeat top center;background-size: contain;}
+	.l-icon3{ background: url(./img/security.png) no-repeat top center;background-size: contain;}
 
 
 .swiper-slide-active .l-icon1,
@@ -445,11 +435,7 @@ body{
 		100%{ transform: translateX(0);}
 	}
 	
-.r-box{
-    width: 16rem;
-    height: auto;
-	left: 0.7rem;
-}
+.r-box{ width: 16rem; height: auto; left: 0.7rem;}
 .swiper-slide-active .r-box1,
 .swiper-slide-active .r-box2,
 .swiper-slide-active .r-box3{
@@ -502,7 +488,7 @@ body{
 .r-line{
 	width: 1.2rem;
 	height: 1px;
-	background: rgba(31,213,87,0.5);
+	background: rgba(31,213,87,0.8);
 }
 .r-content{
 	width: 100%;
@@ -512,7 +498,7 @@ body{
 	font-size: 0.8rem;
 	line-height: 1.3rem;
 	text-align: left;
-	}
+}
 
 
 /*  提示用户竖屏浏览页面  */

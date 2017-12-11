@@ -93,10 +93,10 @@
 			<div class="menu-list">
 			<ul>
 				<li><a href="index.html" title="首页">首页</a></li>
-				<li><a href="service.html" title="服务">服务</a></li>
-				<li><a href="project.html" title="项目">项目</a></li>
-				<li><a href="about.html" title="关于">关于我们</a></li>
-				<li><a href="contact.html" title="联系">联系我们</a></li>
+				<li><a class="service_btn" title="服务">服务</a></li>
+				<li><a class="project_btn" title="项目">项目</a></li>
+				<li><a class="about_btn" title="关于">关于我们</a></li>
+				<li><a class="contact_btn" title="关于">联系我们</a></li>
 			</ul>
 			</div>
 		</div>
@@ -152,6 +152,11 @@
 		</div>
 		<div class="swiper-slide bg3">
 			<div class="bgwrap">
+				<div class="s2"></div>
+			</div>
+		</div>
+		<div class="swiper-slide bg4">
+			<div class="bgwrap">
 				<div class="s3"></div>
 			</div>
 			<div class="copyright">
@@ -169,14 +174,19 @@
 <script src="./js/jquery.js"></script>
 <script src="./js/swiper.jquery.min.js"></script>
 <script>
-var swiper = new Swiper('.swiper-container',{
+var myswiper = new Swiper('.swiper-container',{
 	direction: 'vertical',
 	slidesPerView: 1,
-	speed:500,
+	speed: 500,
 	nextButton:'.swiper-button-next',
 	mousewheelControl: true
 });
-  
+
+$(".service_btn").click(function(){ myswiper.slideTo(1, 500, false); menu_close();});
+$(".project_btn").click(function(){ myswiper.slideTo(2, 500, false); menu_close();});
+$(".about_btn").click(function(){ myswiper.slideTo(3, 500, false); menu_close();});
+$(".contact_btn").click(function(){ myswiper.slideTo(4, 500, false); menu_close();});
+
 if(window.DeviceOrientationEvent){
 	window.addEventListener('deviceorientation', function(event){
 		alpha = event.alpha, beta = event.beta, gamma = event.gamma;
@@ -193,17 +203,23 @@ if(window.DeviceOrientationEvent){
 	}, false);
 }else{ document.querySelector('body').innerHTML = '你的浏览器不支持哦~';}
 
+var menu_close = function(){
+	$("#menu").attr("stay","close");
+	$("#menu").css("display","none");
+	$(".menu_a").css("display","block");
+	$(".menu_b").css("display","none");
+}
+var menu_open = function(){
+	$("#menu").attr("stay","open");
+	$("#menu").css("display","block");
+	$(".menu_a").css("display","none");
+	$(".menu_b").css("display","block");
+}
 $(".menu_btn").click(function(){
 	if($("#menu").attr("stay")=="close"){
-		$("#menu").attr("stay","open");
-		$("#menu").css("display","block");
-		$(".menu_a").css("display","none");
-		$(".menu_b").css("display","block");
+		menu_open();
 	}else if($("#menu").attr("stay")=="open"){
-		$("#menu").attr("stay","close");
-		$("#menu").css("display","none");
-		$(".menu_a").css("display","block");
-		$(".menu_b").css("display","none");
+		menu_close();
 	}
 });
 
@@ -219,6 +235,7 @@ $("#qr_code").click(function(){
 		$("#qr_code").css("display","none");
 	}
 });
+
 </script>
 </body>
 </html>
