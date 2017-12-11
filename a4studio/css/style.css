@@ -325,7 +325,7 @@ body{
 	-webkit-align-items: center;
 	align-items: center;
 }
-
+.bg1, .bg2 , .bg3{ background: #000;}
 .bg1{ background:url(./img/bg1.jpg) no-repeat center center; background-size:cover;}
 .bg2{ background:url(./img/bg2.jpg) no-repeat center center; background-size:cover;}
 .bg3{ background:url(./img/bg3.jpg) no-repeat center center; background-size:cover;}
@@ -333,8 +333,8 @@ body{
 
 .page-title{
 	position: absolute;
-	width: 8rem;
-    height: 4.2rem;
+	width: 7rem;
+    height: 4rem;
     right: 1.25rem;
     bottom: 1.2rem;
     background: url(./img/page-title-service.png) no-repeat bottom right;
