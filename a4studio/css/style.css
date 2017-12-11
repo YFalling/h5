@@ -461,11 +461,11 @@ body{
 	animation: t_box1 0.8s ease;
 }
 	@-webkit-keyframes t_box1{
-		0%{ -webkit-transform: translateX(50%);}
+		0%{ -webkit-transform: translateX(40%);}
 		100%{ -webkit-transform: translateX(0);}
 	}
 	@keyframes t_box1{
-		0%{ transform: translateX(50%);}
+		0%{ transform: translateX(40%);}
 		100%{ transform: translateX(0);}
 	}
 .swiper-slide-active .r-box2{
@@ -473,11 +473,11 @@ body{
 	animation: t_box2 1.2s ease;
 }
 	@-webkit-keyframes t_box2{
-		0%{ -webkit-transform: translateX(50%);}
+		0%{ -webkit-transform: translateX(40%);}
 		100%{ -webkit-transform: translateX(0);}
 	}
 	@keyframes t_box2{
-		0%{ transform: translateX(50%);}
+		0%{ transform: translateX(40%);}
 		100%{ transform: translateX(0);}
 	}
 .swiper-slide-active .r-box3{
@@ -485,11 +485,11 @@ body{
 	animation: t_box3 1.6s ease;
 }
 	@-webkit-keyframes t_box3{
-		0%{ -webkit-transform: translateX(50%);}
+		0%{ -webkit-transform: translateX(40%);}
 		100%{ -webkit-transform: translateX(0);}
 	}
 	@keyframes t_box3{
-		0%{ transform: translateX(50%);}
+		0%{ transform: translateX(40%);}
 		100%{ transform: translateX(0);}
 	}
 .r-title{
@@ -508,7 +508,7 @@ body{
 	width: 100%;
 	height: auto;
 	margin-top: 0.5rem;
-	color: rgba(255,255,255,0.6);
+	color: rgba(255,255,255,0.7);
 	font-size: 0.8rem;
 	line-height: 1.3rem;
 	text-align: left;
