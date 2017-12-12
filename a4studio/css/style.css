@@ -412,7 +412,7 @@ ul li{ list-style: none;}
 .r-title{
 	width: 100%;
 	text-align: left;
-	color: rgba(255,255,255,0.8);
+	color: rgba(255,255,255,0.9);
 	font-size: 1.15rem;
 	line-height: 2rem;
 }
@@ -465,7 +465,7 @@ ul li{ list-style: none;}
 		line-height: 2rem;
 		float: left;
 		font-size: 1.2rem;
-		color: #1fd557;
+		color: rgba(255,255,255,0.9);
 	}
 	.c-t2{
 		width: 5rem;
@@ -474,7 +474,7 @@ ul li{ list-style: none;}
 		line-height: 2.5rem;
 		float: left;
 		font-size: 0.7rem;
-		color: rgba(255,255,255,0.8);
+		color: rgba(255,255,255,0.75);
 	}
 	
 .c-center{
