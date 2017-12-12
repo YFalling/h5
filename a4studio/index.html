@@ -95,8 +95,8 @@
 				<li><a href="index.html" title="首页">首页</a></li>
 				<li><a class="service_btn" title="服务">服务</a></li>
 				<li><a class="project_btn" title="项目">项目</a></li>
+				<li><a class="contact_btn" title="关于">联系方式</a></li>
 				<li><a class="about_btn" title="关于">关于我们</a></li>
-				<li><a class="contact_btn" title="关于">联系我们</a></li>
 			</ul>
 			</div>
 		</div>
@@ -115,31 +115,32 @@
 		</div>
 		<div class="swiper-slide bg1">
 			<div class="bgwrap pos-c-c">
-				<div class="page-title"></div>
+				<div class="page-title page-t1"></div>
 				<div class="service">
 				<ul>
 					<li>
-						<div class="l-icon l-icon1"></div>
-						<div class="r-box r-box1">
+						<div class="l-icon l-icon1 to_right1"></div>
+						<div class="r-box to_left1">
 							<div class="r-title">H5开发</div>
 							<div class="r-line"></div>
 							<div class="r-content">高品质视觉效果 • 设计风格多样化<br/>自动响应式设计 • 高性能移动网站<br/>移动端高速访问 • 专业网站安全<br/>微信H5开发，传播快、传播广、传播有效。</div>
 						</div>
 					</li>
 					<li>
-						<div class="l-icon l-icon2"></div>
-						<div class="r-box r-box2">
+						<div class="l-icon l-icon2 to_right2"></div>
+						<div class="r-box to_left2">
 							<div class="r-title">网站定制</div>
 							<div class="r-line"></div>
 							<div class="r-content">打造一个专属于您自己的企业展示平台<br/>以高品质高性能的特点<br/>使您的企业在互联网+的浪潮中脱颖而出<br/>成为行业标杆！</div>
 						</div>
 					</li>
 					<li>
-						<div class="l-icon l-icon3"></div>
-						<div class="r-box r-box3">
+						<div class="l-icon l-icon3 to_right3"></div>
+						<div class="r-box to_left3">
 							<div class="r-title">专注高端品质</div>
 							<div class="r-line"></div>
 							<div class="r-content">我们坚持“创意+品质”的高端服务理念，<br/>运用创意设计为您塑造品牌形象。</div>
+						</div>
 					</li>
 				</ul>
 				</div>
@@ -147,17 +148,44 @@
 		</div>
 		<div class="swiper-slide bg2">
 			<div class="bgwrap">
-				<div class="s2"></div>
+				<div class="page-title page-t2"></div>
+				<div class="s1"></div>
 			</div>
 		</div>
 		<div class="swiper-slide bg3">
-			<div class="bgwrap">
-				<div class="s2"></div>
+			<div class="bgwrap pos-c-c">
+				<div class="page-title page-t3"></div>
+				<div class="contact">
+					<div class="c-wrapper">
+						<div class="c-top">
+							<div class="c-title">
+								<div class="c-t1">联系方式</div><div class="c-t2">/CONTACT</div>
+							</div>
+						</div>
+						<div class="c-center">
+						<ul>
+							<li class="to_left1">
+								<div class="c-type">手机：</div>
+								<div class="c-value">+39 3778418024</div>
+							</li>
+							<li class="to_left2">
+								<div class="c-type">邮箱：</div>
+								<div class="c-value">a4studio.milan@gmail.com</div>
+							</li>
+							<li class="to_left3">
+								<div class="c-type">微信：</div>
+								<div class="c-value">a4-studio</div>
+							</li>
+						</ul>
+						</div>
+						<div class="c-bottom">•</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="swiper-slide bg4">
 			<div class="bgwrap">
-				<div class="s3"></div>
+				<div class="s4"></div>
 			</div>
 			<div class="copyright">
 				<div class="a4_about">
@@ -184,8 +212,8 @@ var myswiper = new Swiper('.swiper-container',{
 
 $(".service_btn").click(function(){ myswiper.slideTo(1, 500, false); menu_close();});
 $(".project_btn").click(function(){ myswiper.slideTo(2, 500, false); menu_close();});
-$(".about_btn").click(function(){ myswiper.slideTo(3, 500, false); menu_close();});
-$(".contact_btn").click(function(){ myswiper.slideTo(4, 500, false); menu_close();});
+$(".contact_btn").click(function(){ myswiper.slideTo(3, 500, false); menu_close();});
+$(".about_btn").click(function(){ myswiper.slideTo(4, 500, false); menu_close();});
 
 if(window.DeviceOrientationEvent){
 	window.addEventListener('deviceorientation', function(event){
