@@ -9,8 +9,6 @@ body {
 }
 body {
   font-family: "宋体", "Arial", "sans-serif";
-  background: url("images/bg.jpg") no-repeat center center;
-  background-size: cover;
   width: 100%;
   min-width: 320px;
   overflow: hidden;
@@ -346,10 +344,7 @@ header .playing_info .singer {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	left: 0;
-	top: 0;
-	margin: 0 auto;
-	z-index: 0;
+	margin: 0;
 	/* Center slide text vertically */
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -399,6 +394,8 @@ header .playing_info .singer {
 	top: 0;
 	z-index: -9;
 	overflow: hidden;
+	background: url("images/bg.jpg") no-repeat center center;
+	background-size: cover;
 }
 
 /*  棱形动效  */
