@@ -4,8 +4,8 @@
 <title>A4 STUDIO - 专注创意设计与开发</title>
 <meta name="author" content="A4 STUDIO"/>
 <meta name="copyright" content="A4 STUDIO"/>
-<meta name="keywords" content="A4 STUDIO,A4工作室,设计,广告,品牌">
-<meta name="description" content="A4 STUDIO - 专注创意设计与开发">
+<meta name="keywords" content="A4 STUDIO,A4工作室,创意,设计,广告,品牌"/>
+<meta name="description" content="A4 STUDIO - 专注创意设计与开发"/>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"/>
 <link rel="icon" href="./css/img/a4studio.ico" mce_href="./css/img/a4studio.ico" type="image/x-icon"/>  
@@ -131,7 +131,7 @@
 						<div class="r-box to_left2">
 							<div class="r-title">网站定制</div>
 							<div class="r-line"></div>
-							<div class="r-content">打造一个专属于您自己的企业展示平台<br/>以高品质高性能的特点<br/>使您的企业在互联网+的浪潮中脱颖而出<br/>成为行业标杆！</div>
+							<div class="r-content">打造一个专属于您自己的品牌展示平台<br/>以高品质高性能的特点<br/>使您的品牌在互联网+的浪潮中脱颖而出<br/>成为行业标杆！</div>
 						</div>
 					</li>
 					<li>
@@ -166,7 +166,7 @@
 						<ul>
 							<li class="to_left1">
 								<div class="c-type">手机：</div>
-								<div class="c-value">+39 3278506207</div>
+								<div class="c-value">+39 3778418024</div>
 							</li>
 							<li class="to_left2">
 								<div class="c-type">邮箱：</div>
@@ -184,14 +184,18 @@
 			</div>
 		</div>
 		<div class="swiper-slide bg4">
-			<div class="bgwrap">
-				<div class="s4"></div>
-			</div>
-			<div class="copyright">
-				<div class="a4_about">
-					<img src="./css/img/a4studio_1.png"/>
-					<p>米兰A4工作室 | 您最好的线上品牌推广伙伴</p>
-					<div class="qr_btn"><div class="qr_btn1"></div></div>
+			<div class="bgwrap pos-c-c">
+				<div class="about">
+					<div class="a-title">A4 STUDIO<br/>米兰第一家H5设计工作室</div>
+					<div class="p1" style="display:none;"></div>
+					<div class="a-content">我们成立于2017年1月1日<br/>我们坚持“创意+品质”的高端服务理念<br/>运用创意设计为您塑造品牌形象<br/>创造最适合用户品牌的设计<br/>把您的品牌快速推向目标人群！</div>
+				</div>
+				<div class="copyright">
+					<div class="a4_about">
+						<img src="./css/img/a4studio_1.png"/>
+						<p>米兰A4工作室 | 您最好的线上品牌推广伙伴</p>
+						<div class="qr_btn"><div class="qr_btn1"></div></div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -213,7 +217,7 @@ var myswiper = new Swiper('.swiper-container',{
 $(".service_btn").click(function(){ myswiper.slideTo(1, 500, false); menu_close();});
 $(".project_btn").click(function(){ myswiper.slideTo(2, 500, false); menu_close();});
 $(".contact_btn").click(function(){ myswiper.slideTo(3, 500, false); menu_close();});
-$(".about_btn").click(function(){ myswiper.slideTo(4, 500, false); menu_close();});
+$(".about_btn").click(function(){ myswiper.slideTo(4, 500, false); menu_close(); text_to_text();});
 
 if(window.DeviceOrientationEvent){
 	window.addEventListener('deviceorientation', function(event){
