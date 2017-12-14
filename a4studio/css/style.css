@@ -374,7 +374,7 @@ ul li{ list-style: none;}
     bottom: 1.2rem;
 }
 .page-t1{ background: url(./img/page-title-service.png) no-repeat bottom right; background-size: contain;}
-.page-t2{ background: url(./img/page-title-service.png) no-repeat bottom right; background-size: contain;}
+.page-t2{ background: url(./img/page-title-project.png) no-repeat bottom right; background-size: contain;}
 .page-t3{ background: url(./img/page-title-contact.png) no-repeat bottom right; background-size: contain;}
 
 .service{
@@ -432,6 +432,106 @@ ul li{ list-style: none;}
 	line-height: 1.3rem;
 	text-align: left;
 }
+
+.project{
+	position: relative;
+    width: 95%;
+    height: 60%;
+}
+#up{
+    position: relative;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin: 0 auto;
+    overflow: hidden;
+    display: inline-block;
+    z-index: 99;
+}
+#up_btn{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0);
+	z-index: 99999999;
+}
+.dy{
+    margin-top: 57%;
+}
+#banner{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+	margin: 0 auto;
+	overflow: hidden;
+}
+	#banner ul{
+		position: absolute;
+		list-style-type: none;
+		filter: Alpha(Opacity=80);
+		opacity: 0.8;
+		z-index: 1002;
+		margin: 0;
+		padding: 0;
+		bottom: 3px;
+		right: 5px;
+	}
+	#banner ul li{
+		padding: 0px 8px;
+		float: left;
+		display: block;
+		color: #FFF;
+		background: #6f4f67;
+		cursor: pointer;
+		border: 1px solid #333;
+	}
+	#banner ul li.on{ background-color: #000; }
+	
+#banner_bg{
+    position: absolute;
+	width: 100%;
+    height: 2rem;
+    margin: 0;
+    z-index: 99;
+    cursor: pointer;
+}
+#banner_info{
+	line-height: 2rem;
+	font-size: 1rem;
+	color: rgba(255,255,255,0.7);
+	text-align: center;
+}
+
+#banner_list{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	z-index: 9;
+	cursor: pointer;
+}
+	#banner_list img {
+		width: 100%;
+		height: 100%;
+		border: 0px;
+	}
+	#banner_list a{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+	}
+
+.p1{ background: url(./img/1.jpg) no-repeat center center; background-size: contain;}
+.p2{ background: url(./img/2.jpg) no-repeat center center; background-size: contain;}
+.p3{ background: url(./img/3.jpg) no-repeat center center; background-size: contain;}
+.p4{ background: url(./img/4.jpg) no-repeat center center; background-size: contain;}
+.p5{ background: url(./img/5.jpg) no-repeat center center; background-size: contain;}
+.p6{ background: url(./img/6.jpg) no-repeat center center; background-size: contain;}
 
 .contact{
 	position: relative;
@@ -536,7 +636,7 @@ ul li{ list-style: none;}
     color: rgba(255,255,255,0.9);
 }
 .a-content{
-	font-size: 0.9rem;
+	font-size: 0.8rem;
     padding: 0;
     margin-top: 2rem;
     line-height: 1.5rem;

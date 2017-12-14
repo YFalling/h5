@@ -95,7 +95,7 @@
 				<li><a href="index.html" title="首页">首页</a></li>
 				<li><a class="service_btn" title="服务">服务</a></li>
 				<li><a class="project_btn" title="项目">项目</a></li>
-				<li><a class="contact_btn" title="关于">联系方式</a></li>
+				<li><a class="contact_btn" title="联系">联系方式</a></li>
 				<li><a class="about_btn" title="关于">关于我们</a></li>
 			</ul>
 			</div>
@@ -147,9 +147,36 @@
 			</div>
 		</div>
 		<div class="swiper-slide bg2">
-			<div class="bgwrap">
+			<div class="bgwrap pos-c-c">
 				<div class="page-title page-t2"></div>
 				<div class="s1"></div>
+				<div class="project">
+					<div id="up">
+						<div class="dy"></div>
+						<div id="banner" stay="pause">
+							<ul style="display:none;">
+								<li class="on">1</li>
+								<li>2</li>
+								<li>3</li>
+								<li>4</li>
+								<li>5</li>
+								<li>6</li>
+							</ul>
+							<div id="banner_list">
+								<a href="https://yfalling.github.io/h5/mylover/"><img class="p1" src="./css/img/00.png" alt="祝我最可爱的小宝贝生日快乐！"/></a>
+								<a href="https://yfalling.github.io/h5/mymusic_alone/"><img class="p2" src="./css/img/00.png" alt="你这么孤独，确定不来几首音乐？"/></a>
+								<a><img class="p3" src="./css/img/00.png" alt="aaa"/></a>
+								<a><img class="p4" src="./css/img/00.png" alt="aaa"/></a>
+								<a><img class="p5" src="./css/img/00.png" alt="aaa"/></a>
+								<a><img class="p6" src="./css/img/00.png" alt="aaa"/></a>
+							</div>
+						</div>
+					</div>
+					<!--轮播标题-->
+					<div id="banner_bg">
+						<div id="banner_info"></div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="swiper-slide bg3">
@@ -214,10 +241,32 @@ var myswiper = new Swiper('.swiper-container',{
 	mousewheelControl: true
 });
 
-$(".service_btn").click(function(){ myswiper.slideTo(1, 500, false); menu_close();});
-$(".project_btn").click(function(){ myswiper.slideTo(2, 500, false); menu_close();});
-$(".contact_btn").click(function(){ myswiper.slideTo(3, 500, false); menu_close();});
-$(".about_btn").click(function(){ myswiper.slideTo(4, 500, false); menu_close();});
+var t = n =0, count;
+$(document).ready(function(){
+	var time = 5000;
+	count=$("#banner_list a").length;
+	$("#banner_list a:not(:first-child)").hide();
+	$("#banner_info").html($("#banner_list a:first-child").find("img").attr('alt'));
+	$("#banner li").click(function() {
+		var i = $(this).text() -1;//获取Li元素内的值，即1，2，3，4
+		n = i;
+		if (i >= count) return;
+		$("#banner_info").html($("#banner_list a").eq(i).find("img").attr('alt'));
+		$("#banner_list a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(500);
+		document.getElementById("banner").style.background="";
+		$(this).toggleClass("on");
+		$(this).siblings().removeAttr("class");
+	});
+	t = setInterval("showAuto()", time);
+	
+	// hover暂停轮播
+	$("#banner_list a img").mouseenter(function(){clearInterval(t);});
+	$("#banner_list a img").mouseleave(function(){t = setInterval("showAuto()", time);});
+})
+function showAuto(){
+	n = n >=(count -1) ?0 : ++n;
+	$("#banner li").eq(n).trigger('click');
+}
 
 if(window.DeviceOrientationEvent){
 	window.addEventListener('deviceorientation', function(event){
@@ -254,6 +303,11 @@ $(".menu_btn").click(function(){
 		menu_close();
 	}
 });
+
+$(".service_btn").click(function(){ myswiper.slideTo(1, 500, false); menu_close();});
+$(".project_btn").click(function(){ myswiper.slideTo(2, 500, false); menu_close();});
+$(".contact_btn").click(function(){ myswiper.slideTo(3, 500, false); menu_close();});
+$(".about_btn").click(function(){ myswiper.slideTo(4, 500, false); menu_close();});
 
 $(".qr_btn").click(function(){
 	if($("#qr_code").attr("stay")=="close"){
