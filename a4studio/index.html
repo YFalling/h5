@@ -104,17 +104,17 @@
 			<div class="qr_code_img"><img class="qr_img" src="./css/img/qr_code.png"/></div>
 		</div>
 	</div>
-	<div class="swiper-container">
+	<div class="swiper-container swiper-container-v">
 	<div class="swiper-wrapper">
 		<div class="a4_copyright">COPYRIGHT © 2017 A4 STUDIO.</div>
-		<div class="swiper-slide">
+		<div class="swiper-slide cc">
 			<div class="page_first">
 				<div class="a4_text"></div>
 				<div class="more_btn swiper-button-next">MORE</div>
 			</div>
 		</div>
 		<div class="swiper-slide bg1">
-			<div class="bgwrap pos-c-c">
+			<div class="bgwrap cc">
 				<div class="page-title page-t1"></div>
 				<div class="service">
 				<ul>
@@ -147,40 +147,39 @@
 			</div>
 		</div>
 		<div class="swiper-slide bg2">
-			<div class="bgwrap pos-c-c">
+			<div class="bgwrap cc">
 				<div class="page-title page-t2"></div>
-				<div class="s1"></div>
 				<div class="project">
-					<div id="up">
-						<div class="dy"></div>
-						<div id="banner" stay="pause">
-							<ul style="display:none;">
-								<li class="on">1</li>
-								<li>2</li>
-								<li>3</li>
-								<li>4</li>
-								<li>5</li>
-								<li>6</li>
-							</ul>
-							<div id="banner_list">
-								<a href="https://yfalling.github.io/h5/mylover/"><img class="p1" src="./css/img/00.png" alt="祝我最可爱的小宝贝生日快乐！"/></a>
-								<a href="https://yfalling.github.io/h5/mymusic_alone/"><img class="p2" src="./css/img/00.png" alt="你这么孤独，确定不来几首音乐？"/></a>
-								<a><img class="p3" src="./css/img/00.png" alt="aaa"/></a>
-								<a><img class="p4" src="./css/img/00.png" alt="aaa"/></a>
-								<a><img class="p5" src="./css/img/00.png" alt="aaa"/></a>
-								<a><img class="p6" src="./css/img/00.png" alt="aaa"/></a>
+					<div class="swiper-container swiper-container-h">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="banner p1"></div>
+								<div class="banner-content">祝我最可爱的小宝贝生日快乐！</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="banner p2"></div>
+								<div class="banner-content">你这么孤独，确定不来一首音乐？</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="banner p3"></div>
+								<div class="banner-content"></div>
+							</div>
+							<div class="swiper-slide">
+								<div class="banner p4"></div>
+								<div class="banner-content"></div>
+							</div>
+							<div class="swiper-slide">
+								<div class="banner p5"></div>
+								<div class="banner-content"></div>
 							</div>
 						</div>
-					</div>
-					<!--轮播标题-->
-					<div id="banner_bg">
-						<div id="banner_info"></div>
+						<div class="swiper-pagination swiper-pagination-h"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<div class="swiper-slide bg3">
-			<div class="bgwrap pos-c-c">
+			<div class="bgwrap cc">
 				<div class="page-title page-t3"></div>
 				<div class="contact">
 					<div class="c-wrapper">
@@ -211,7 +210,7 @@
 			</div>
 		</div>
 		<div class="swiper-slide bg4">
-			<div class="bgwrap pos-c-c">
+			<div class="bgwrap cc">
 				<div class="about">
 					<div class="a-title">A4 STUDIO<br/>米兰第一家H5设计工作室</div>
 					<div class="p1" style="display:none;"></div>
@@ -230,43 +229,23 @@
 	</div>
 </div>
 
-<script src="./js/jquery.js"></script>
-<script src="./js/swiper.jquery.min.js"></script>
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script src="./js/swiper-3.4.2.jquery.min.js"></script>
 <script>
-var myswiper = new Swiper('.swiper-container',{
+var myswiper = new Swiper('.swiper-container-v',{
 	direction: 'vertical',
 	slidesPerView: 1,
 	speed: 500,
 	nextButton:'.swiper-button-next',
 	mousewheelControl: true
 });
-
-var t = n =0, count;
-$(document).ready(function(){
-	var time = 5000;
-	count=$("#banner_list a").length;
-	$("#banner_list a:not(:first-child)").hide();
-	$("#banner_info").html($("#banner_list a:first-child").find("img").attr('alt'));
-	$("#banner li").click(function() {
-		var i = $(this).text() -1;//获取Li元素内的值，即1，2，3，4
-		n = i;
-		if (i >= count) return;
-		$("#banner_info").html($("#banner_list a").eq(i).find("img").attr('alt'));
-		$("#banner_list a").filter(":visible").fadeOut(500).parent().children().eq(i).fadeIn(500);
-		document.getElementById("banner").style.background="";
-		$(this).toggleClass("on");
-		$(this).siblings().removeAttr("class");
-	});
-	t = setInterval("showAuto()", time);
-	
-	// hover暂停轮播
-	$("#banner_list a img").mouseenter(function(){clearInterval(t);});
-	$("#banner_list a img").mouseleave(function(){t = setInterval("showAuto()", time);});
-})
-function showAuto(){
-	n = n >=(count -1) ?0 : ++n;
-	$("#banner li").eq(n).trigger('click');
-}
+var swiperH = new Swiper('.swiper-container-h', {
+	direction: 'horizontal',
+	slidesPerView: 1,
+	speed: 500,
+	pagination : '.swiper-pagination-h',
+	mousewheelControl: true
+});
 
 if(window.DeviceOrientationEvent){
 	window.addEventListener('deviceorientation', function(event){

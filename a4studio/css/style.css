@@ -323,17 +323,8 @@ ul li{ list-style: none;}
 
 .swiper-container{ width: 100%; height: 100%;}
 .swiper-slide{
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: flex;
-	-webkit-box-pack: center;
-	-webkit-justify-content: center;
-	-moz-justify-content: center;
-	justify-content: center;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	align-items: center;
+	margin: 0;
+	padding: 0;
 }
 
 .bgwrap{
@@ -346,7 +337,7 @@ ul li{ list-style: none;}
     left: 0;
     overflow: hidden;
 }
-.pos-c-c{
+.cc{
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -438,93 +429,17 @@ ul li{ list-style: none;}
     width: 95%;
     height: 60%;
 }
-#up{
-    position: relative;
-    width: 100%;
-    left: 0;
-    top: 0;
-    margin: 0 auto;
-    overflow: hidden;
-    display: inline-block;
-    z-index: 99;
-}
-#up_btn{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background: rgba(0,0,0,0);
-	z-index: 99999999;
-}
-.dy{
-    margin-top: 57%;
-}
-#banner{
-    position: absolute;
-    width: 100%;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-	margin: 0 auto;
-	overflow: hidden;
-}
-	#banner ul{
-		position: absolute;
-		list-style-type: none;
-		filter: Alpha(Opacity=80);
-		opacity: 0.8;
-		z-index: 1002;
-		margin: 0;
-		padding: 0;
-		bottom: 3px;
-		right: 5px;
-	}
-	#banner ul li{
-		padding: 0px 8px;
-		float: left;
-		display: block;
-		color: #FFF;
-		background: #6f4f67;
-		cursor: pointer;
-		border: 1px solid #333;
-	}
-	#banner ul li.on{ background-color: #000; }
-	
-#banner_bg{
-    position: absolute;
-	width: 100%;
-    height: 2rem;
-    margin: 0;
-    z-index: 99;
-    cursor: pointer;
-}
-#banner_info{
-	line-height: 2rem;
-	font-size: 1rem;
-	color: rgba(255,255,255,0.7);
-	text-align: center;
-}
-
-#banner_list{
+.banner{
 	position: relative;
 	width: 100%;
-	height: 100%;
-	bottom: 0;
-	z-index: 9;
-	cursor: pointer;
+	height: 13rem;
+	margin: 0;
 }
-	#banner_list img {
-		width: 100%;
-		height: 100%;
-		border: 0px;
-	}
-	#banner_list a{
-		position: absolute;
-		width: 100%;
-		height: 100%;
-	}
+.banner-content{
+	font-size: 1rem;
+    margin: 1rem;
+    color: #fff;
+}
 
 .p1{ background: url(./img/1.jpg) no-repeat center center; background-size: contain;}
 .p2{ background: url(./img/2.jpg) no-repeat center center; background-size: contain;}
