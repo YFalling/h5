@@ -216,13 +216,7 @@
 					<div class="p1" style="display:none;"></div>
 					<div class="a-content">我们成立于2017年1月1日<br/>我们坚持“创意+品质”的高端服务理念<br/>运用创意设计为您塑造品牌形象<br/>创造最适合用户品牌的设计<br/>把您的品牌快速推向目标人群！</div>
 				</div>
-				<div class="copyright">
-					<div class="a4_about">
-						<img src="./css/img/a4studio_1.png"/>
-						<p>米兰A4工作室 | 您最好的线上品牌推广伙伴</p>
-						<div class="qr_btn"><div class="qr_btn1"></div></div>
-					</div>
-				</div>
+				<div class="qr_btn"><div class="qr_btn1">联系微信</div></div>
 			</div>
 		</div>
 	</div>
@@ -244,7 +238,10 @@ var swiperH = new Swiper('.swiper-container-h', {
 	slidesPerView: 1,
 	speed: 500,
 	pagination : '.swiper-pagination-h',
-	mousewheelControl: true
+	paginationClickable :true,
+	mousewheelControl: true,
+	loop : true,
+	autoplay : 5000,
 });
 
 if(window.DeviceOrientationEvent){
