@@ -34,7 +34,9 @@ ul li{ list-style: none;}
     height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
+.wechat-img{ position: absolute; width: 300px; height: 300px; display: none;}
 .bg_layer{ position: fixed; width: 100%; height: 100%;}
 .bg_layer_img{
 	position: relative;
@@ -278,10 +280,7 @@ ul li{ list-style: none;}
 
 
 .swiper-container{ width: 100%; height: 100%;}
-.swiper-slide{
-	margin: 0;
-	padding: 0;
-}
+.swiper-slide{ margin: 0; padding: 0;}
 
 .bgwrap{
     position: absolute;
@@ -291,6 +290,7 @@ ul li{ list-style: none;}
     right: 0;
     bottom: 0;
     left: 0;
+    overflow: hidden;
 }
 .cc{
 	display: -webkit-box;
@@ -346,56 +346,90 @@ ul li{ list-style: none;}
 		float: left;
 	}
 
-.l-icon, .r-box, .r-title, .r-line, .r-content{
-	position: relative;
-    float: left;
-}
+.l-icon, .r-box, .r-title, .r-line, .r-content{ position: relative; float: left;}
 .l-icon{ width: 1.8rem; height: 1.8rem; margin-top: 0.2rem;}
 	.l-icon1{ background: url(./img/mobile-phone.png) no-repeat top center; background-size: contain;}
 	.l-icon2{ background: url(./img/electronics.png) no-repeat top center;background-size: contain;}
 	.l-icon3{ background: url(./img/security.png) no-repeat top center;background-size: contain;}
 
 .r-box{ width: 16rem; height: auto; left: 0.7rem;}
-
-.r-title{
-	width: 100%;
-	text-align: left;
-	color: rgba(255,255,255,0.9);
-	font-size: 1.15rem;
-	line-height: 2rem;
-}
-.r-line{
-	width: 1.2rem;
-	height: 1px;
-	background: rgba(31,213,87,0.8);
-}
-.r-content{
-	width: 100%;
-	height: auto;
-	margin-top: 0.5rem;
-	color: rgba(255,255,255,0.7);
-	font-size: 0.8rem;
-	line-height: 1.3rem;
-	text-align: left;
-}
+	.r-title{
+		width: 100%;
+		text-align: left;
+		color: rgba(255,255,255,0.9);
+		font-size: 1.15rem;
+		line-height: 2rem;
+	}
+	.r-line{
+		width: 1.2rem;
+		height: 1px;
+		background: rgba(31,213,87,0.8);
+	}
+	.r-content{
+		width: 100%;
+		height: auto;
+		margin-top: 0.5rem;
+		color: rgba(255,255,255,0.7);
+		font-size: 0.8rem;
+		line-height: 1.3rem;
+		text-align: left;
+	}
 
 .project{
 	position: relative;
-    width: 80%;
-    height: 60%;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 .banner{
 	position: relative;
-	width: 100%;
-	height: 13rem;
-	margin: 0;
+	width: 80%;
+	height: 24rem;
 }
-.banner-content{
-	font-size: 0.85rem;
-    margin: 1rem;
-    color: #fff;
-}
+	.banner-img{
+		position: relative;
+		width: 100%;
+		height: 13rem;
+		margin: 0;
+	}
+	.banner-content{
+		margin: 0;
+	}
+	.t1{
+		line-height: 2rem;
+		color: rgba(255,255,255,0.9);
+		font-size: 1rem;
+		margin: 0.5rem 0 0 0;
+	}
+	.t2{
+		line-height: 1.2rem;
+		color: rgba(255,255,255,0.7);
+		font-size: 0.9rem;
+		margin: 1rem 0 0 0;
+	}
 
+.banner-tag{
+	width: 100%;
+    border-top: 1px solid rgba(31,213,87,0.5);
+    margin: 2rem 0 0 0;
+    padding: 0.5rem 0 0 0;
+}
+	.banner-tag ul{
+		margin: 0;
+		padding: 0;
+		font-size: 0.7rem;
+	}
+	.banner-tag ul li{
+		position: relative;
+		margin: 2px;
+		float: left;
+		background: rgba(0,0,0,0.4);
+		color: rgba(255,255,255,0.6);
+		padding: 2px 6px;
+		border-radius: 3px;
+	}
+	
 .p1{ background: url(./img/1.jpg) no-repeat center center; background-size: contain;}
 .p2{ background: url(./img/2.jpg) no-repeat center center; background-size: contain;}
 .p3{ background: url(./img/3.jpg) no-repeat center center; background-size: contain;}
@@ -481,7 +515,6 @@ ul li{ list-style: none;}
 	color: rgba(255,255,255,0.7);
 	font-size: 0.9rem;
 }
-
 .c-bottom{
     position: relative;
     width: 100%;
@@ -491,7 +524,6 @@ ul li{ list-style: none;}
     font-size: 1rem;
     color: rgba(31,213,87,0.8);
 }
-
 
 .about{
 	position: relative;
@@ -527,7 +559,7 @@ ul li{ list-style: none;}
 	.qr_code_img{
 		position: absolute;
 		width: 100%;
-		bottom: 4.4rem;
+		bottom: 4rem;
 		background: url(./img/qr_code.png) no-repeat center center;
 		background-size: contain;
 	}
@@ -546,7 +578,7 @@ ul li{ list-style: none;}
     left: 0;
     bottom: 0;
     margin: 0;
-    padding-bottom: 1.4rem;
+    padding-bottom: 2rem;
 }
 .qr_btn1{
     position: relative;
