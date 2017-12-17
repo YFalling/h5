@@ -36,7 +36,7 @@ ul li{ list-style: none;}
     padding: 0;
     overflow: hidden;
 }
-.wechat-img{ position: absolute; width: 300px; height: 300px; display: none;}
+.wechat-img{ position: absolute; width: 300px; height: 300px; opacity: 0;}
 .bg_layer{ position: fixed; width: 100%; height: 100%;}
 .bg_layer_img{
 	position: relative;
