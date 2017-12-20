@@ -1,0 +1,359 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>唯一的2017</title>
+<meta name="author" content="A4 STUDIO"/>
+<meta name="copyright" content="A4 STUDIO"/>
+<meta name="keywords" content="2017, 圣诞, Merry Christmas"/>
+<meta name="description" content="唯一的2017"/>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"/>
+<link rel="icon" href="./css/img/a4studio.ico" mce_href="./css/img/a4studio.ico" type="image/x-icon"/>  
+<link rel="shortcut icon" href="./css/img/a4studio.ico" mce_href="./css/img/a4studio.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="./css/style.css"/>
+</head>
+<body onLoad="init()">
+<img class="wechat-img" src="./css/img/wechat-img.png"/>
+<div class="bg_layer"><div class="bg_layer_img"></div></div>
+
+	<!-- 音乐歌词 -->
+	<div class="music_lyric">
+		<div class="hidden_layer"></div>
+		<div id="musicContent">
+			<span class="musicContent02"></span>
+		</div>
+	</div>
+	
+	<!-- 歌词 -->
+	<div class="lyric_t">
+		<!-- 播放器 -->
+		<div class="music" style="display:none;">
+			<i class="icon-music open" num="1"></i>
+			<audio id="my_audio" number="1" src="./audio/1.mp3" loop="no" preload="" autoplay="autoplay"></audio>
+		</div>
+		<div class="time">
+			<span class="now_time" id="now_time">00:00</span>
+			<span class="all_time" id="all_time">00:00</span>
+		</div>
+		<div class="time_progress">
+			<div class="progress">
+				<p class="bar" id="bar"></p>
+				<div class="btn" id="btn"></div>
+			</div>
+		</div>
+	</div>
+
+<!-- 引入JS文件 -->
+<script src="./js/jquery-3.2.1.min.js"></script>
+<script src="./js/song.js"></script>
+<script src="./js/ThreeCanvas.js"></script>
+<script src="./js/Snow.js"></script>
+<script>
+if(window.DeviceOrientationEvent){
+	window.addEventListener('deviceorientation', function(event){
+		alpha = event.alpha, beta = event.beta, gamma = event.gamma;
+		
+		if(beta>70){ beta=70;}
+		if(beta<0){ beta=0;}
+		if(gamma>30){ gamma=30;}
+		if(gamma<-30){ gamma=-30;}
+		
+		var orizontale = gamma/1.25,
+			verticale = beta/2.9;
+		$(".bg_layer_img").css('transform','translateX('+orizontale+'%) translateY('+verticale+'%)');
+		
+	}, false);
+}else{ document.querySelector('body').innerHTML = '你的浏览器不支持哦~';}
+</script>
+
+<!-- 微信audio自动触发 -->
+<script type="text/javascript">
+	// 音乐播放
+	function autoPlayMusic() {
+		// 自动播放音乐效果，解决浏览器或者APP自动播放问题
+		function musicInBrowserHandler() {
+			musicPlay(true);
+			document.body.removeEventListener('touchstart', musicInBrowserHandler);
+		}
+		document.body.addEventListener('touchstart', musicInBrowserHandler);
+
+		// 自动播放音乐效果，解决微信自动播放问题
+		function musicInWeixinHandler() {
+			musicPlay(true);
+			document.addEventListener("WeixinJSBridgeReady", function () {
+				musicPlay(true);
+			}, false);
+			document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+		}
+		document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+	}
+	function musicPlay(isPlay) {
+		var audio = document.getElementById('my_audio');
+		if (isPlay && audio.paused) {
+			audio.play();
+		}
+		if (!isPlay && !audio.paused) {
+			audio.pause();
+		}
+	}
+	autoPlayMusic();
+</script>
+<script type="text/javascript">
+	var SCREEN_WIDTH = window.innerWidth;
+	var SCREEN_HEIGHT = window.innerHeight;
+
+	var container;
+	var particle;
+	var camera;
+	var scene;
+	var renderer;
+
+	var mouseX = 0;
+	var mouseY = 0;
+
+	var windowHalfX = window.innerWidth / 2;
+	var windowHalfY = window.innerHeight / 2;
+
+	var particles = []; 
+	var particleImage = new Image();//THREE.ImageUtils.loadTexture( "img/ParticleSmoke.png" );
+	particleImage.src = './css/img/ParticleSmoke.png'; 
+
+	function init(){
+
+		container = document.createElement('div');
+		document.body.appendChild(container);
+
+		camera = new THREE.PerspectiveCamera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
+		camera.position.z = 1000;
+
+		scene = new THREE.Scene();
+		scene.add(camera);
+			
+		renderer = new THREE.CanvasRenderer();
+		renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+		var material = new THREE.ParticleBasicMaterial( { map: new THREE.Texture(particleImage) } );
+			
+		for (var i = 0; i < 500; i++) {
+			particle = new Particle3D( material);
+			particle.position.x = Math.random() * 2000 - 1000;
+			particle.position.y = Math.random() * 2000 - 1000;
+			particle.position.z = Math.random() * 2000 - 1000;
+			particle.scale.x = particle.scale.y =  1;
+			scene.add(particle);
+			particles.push(particle); 
+		}
+
+		container.appendChild(renderer.domElement);
+
+		document.addEventListener('mousemove', onDocumentMouseMove, false);
+		document.addEventListener('touchstart', onDocumentTouchStart, false);
+		document.addEventListener('touchmove', onDocumentTouchMove, false);
+		
+		setInterval( loop, 1600 / 60 );
+	}
+
+	function onDocumentMouseMove(event){
+		mouseX = event.clientX - windowHalfX;
+		mouseY = event.clientY - windowHalfY;
+	}
+
+	function onDocumentTouchStart(event){
+		if (event.touches.length==1){
+			event.preventDefault();
+			mouseX = event.touches[0].pageX - windowHalfX;
+			mouseY = event.touches[0].pageY - windowHalfY;
+		}
+	}
+
+	function onDocumentTouchMove(event){
+		if (event.touches.length==1){
+			event.preventDefault();
+			mouseX = event.touches[0].pageX - windowHalfX;
+			mouseY = event.touches[0].pageY - windowHalfY;
+		}
+	}
+
+	function loop() {
+
+		for(var i=0;i<particles.length;i++){
+			var particle = particles[i];
+			particle.updatePhysics();
+			
+			with(particle.position){
+				if(y<-1000) y+=2000; 
+				if(x>1000) x-=2000; 
+				else if(x<-1000) x+=2000;
+				if(z>1000) z-=2000; 
+				else if(z<-1000) z+=2000;
+			}
+		}
+
+		camera.position.x += ( mouseX - camera.position.x ) * 0.05;
+		camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+		camera.lookAt(scene.position);
+
+		renderer.render(scene,camera);
+	}
+</script>
+<!-- 音乐 -->
+<script>
+
+// 播放按钮
+$(".icon-music").click(function(){
+	if($(".icon-music").attr("num") == "1"){
+		$(".icon-music").removeClass("open");
+		$(".icon-music").addClass("close");
+		$(".icon-music").attr("num","2")
+		document.getElementById("my_audio").pause();
+		$(".music_text").html("关闭");
+		$(".music_text").addClass("show_hide");
+		setTimeout(musicHide,2000);
+		$(".cd").removeClass("cd_play");
+	}else{
+		$(".icon-music").attr("num","1");
+		$(".icon-music").addClass("open");
+		$(".icon-music").removeClass("close");
+		document.getElementById("my_audio").play();
+		$(".music_text").html("开启");
+		$(".music_text").addClass("show_hide");
+		setTimeout(musicHide,2000);
+		$(".cd").addClass("cd_play");
+	}
+	function musicHide(){
+		$(".music_text").removeClass("show_hide");
+	}
+});
+</script>
+
+<!-- 歌词JS -->
+<script type="text/javascript">
+	var my_audio = document.getElementById("my_audio");
+	var p_all=$(".progress").width();
+	var startX = startY = endX = endY = 0;
+	
+	//暂停或播放
+	function playPause()
+	{
+		if(my_audio.paused){
+			my_audio.play();
+		}
+		else{
+			my_audio.pause();
+		}
+	}
+	
+	var lyric = parseLyric(songContent);
+	//显示歌词的元素
+	lyricContainer = document.getElementById('musicContent');
+	//audio播放的时候实时获取当前播放时间
+	my_audio.ontimeupdate = function()
+	{
+		//获取当前播放时间
+		document.getElementById("now_time").innerHTML = timeFormat(my_audio.currentTime);
+		//当前的长度
+		now_long=my_audio.currentTime/my_audio.duration*p_all;
+		$(".bar").css({width:now_long});
+		var btn_l=now_long-10+'px';
+		$(".btn").css({left:btn_l});
+		//遍历所有歌词，看哪句歌词的时间与当然时间吻合
+		for (var i = 0, l = lyric.length; i < l; i++) {
+			if (this.currentTime /*当前播放的时间*/ > lyric[i][0]) {
+				//显示到页面
+//		            lyricContainer.textContent = lyric[i][1];
+				if(i>=1){
+				//	$(".musicContent01").html(lyric[i-1][1]);
+		            $(".musicContent02").html(lyric[i][1]);
+		         //   $(".musicContent03").html(lyric[i+1][1]);
+				}else{
+		            $(".musicContent02").html(lyric[i][1]);
+		         //   $(".musicContent03").html(lyric[i+1][1]);
+				}
+		};
+		addListenTouch();
+	};
+};
+
+	//页面一旦加入就获取audio的总时间
+	my_audio.onprogress = function()
+	{
+		document.getElementById("all_time").innerHTML = timeFormat(my_audio.duration);
+		//总的长度
+	};	
+	// Time format converter - 00:00//时间格式转换器- 00:00
+	var timeFormat = function(seconds){
+		var m = Math.floor(seconds/60)<10 ? "0"+Math.floor(seconds/60) : Math.floor(seconds/60);
+		var s = Math.floor(seconds-(m*60))<10 ? "0"+Math.floor(seconds-(m*60)) : Math.floor(seconds-(m*60));
+		return m+":"+s;
+	};	
+	//手动拉拽进度条的部分
+function addListenTouch(){
+	//var speed=$('.had-play');
+	var btn=document.getElementById("btn");
+	document.getElementById("btn").addEventListener("touchstart", touchStart, false);
+	document.getElementById("btn").addEventListener("touchmove", touchMove, false);
+	document.getElementById("btn").addEventListener("touchend", touchEnd, false);
+	document.getElementById("musicContent").addEventListener("touchstart", touchStart, false);
+	document.getElementById("musicContent").addEventListener("touchmove", touchMove, false);
+	document.getElementById("musicContent").addEventListener("touchend", touchEnd, false);
+}
+function touchStart(e){
+	e.preventDefault();
+	var touch=e.touches[0];
+	startX=touch.pageX;
+	my_audio.pause();
+	document.getElementById("all_time").innerHTML = timeFormat(my_audio.duration);	
+	//歌词区域touch移动距离
+	var touchSong = e.targetTouches[0];
+	startSongX = touchSong.pageX;
+	startSongY = touchSong.pageY;
+	}
+function touchMove(e){//滑动
+	e.preventDefault();
+	var touch=e.touches[0];
+	x=touch.pageX-startX//滑动的距离
+	//btn.style.webkitTransform='translate('+0+'px,'+y+'px)';
+	var widthBar=now_long+x;
+	//
+	$(".bar").css({width:widthBar});
+	if(widthBar<p_all)
+		{
+		//	
+		$("#btn").css({left:widthBar-10+'px'});
+		$("#bar").css({width:widthBar});	
+		}//不让进度条超出页面
+	//歌词区域touch移动距离
+	var touchSong = e.targetTouches[0];
+	endSongX = touchSong.pageX;
+	endSongY = touchSong.pageY;
+   
+	var yu=widthBar/p_all*my_audio.duration;
+	document.getElementById("now_time").innerHTML = timeFormat(yu);
+	}
+function touchEnd(e){//手指离开屏幕
+	e.preventDefault();//取消事件的默认动作
+	now_long=parseInt(btn.style.left);
+	var touch=e.touches[0];
+	var dragPaddingLeft=btn.style.left;
+	var change=dragPaddingLeft.replace("px","");
+	numDragpaddingLeft=parseInt(change);
+	//console.log(numDragpaddingLeft);
+	var currentTimeNew=(numDragpaddingLeft/(p_all-20)*my_audio.duration);
+//		if(endSongX&&startSongX){
+//			if((endSongY-startSongY)<0){
+//				
+//				currentTimeNew = currentTimeNew - (parseInt(endSongY-startSongY))/80*my_audio.duration;
+//			}
+//			currentTimeNew = (endSongY-startSongY)/80*my_audio.duration;
+//		}
+	
+	my_audio.currentTime = currentTimeNew;
+	//console.log(currentTimeNew);
+	//console.log(timeFormat(currentTimeNew));
+	document.getElementById("now_time").innerHTML = timeFormat(currentTimeNew);
+	my_audio.play();
+	document.getElementById("all_time").innerHTML = timeFormat(my_audio.duration);	
+	console.log("垂直移动距离=    "+(endSongY-startSongY));
+}
+</script>
+</body>
+</html>
