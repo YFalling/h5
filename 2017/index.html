@@ -14,7 +14,7 @@
 </head>
 <body onLoad="init()">
 <img class="wechat-img" src="./css/img/wechat-img.png"/>
-<div class="bg_layer"><div class="bg_layer_img"></div></div>
+<div class="bg_layer"><div class="bg_layer_img"></div><div class="bg_layer_color"></div></div>
 
 <div class="wrapper">
 	<div class="story-line">
@@ -24,6 +24,10 @@
 			<li class="a2"></li>
 			<li class="a3"></li>
 			<li class="a4"></li>
+			<li class="a5"></li>
+			<li class="a6"></li>
+			<li class="a7"></li>
+			<li class="a8"></li>
 		</ul>
 		</div>
 		<div class="story-btn">
@@ -130,8 +134,10 @@ $.fn.longPress = function(fn) {
 
 var numb=0;
 $('.s-btn').longPress(function(){
+	$(".bg_layer_img").addClass("l_blur");
+	$(".wrapper").addClass("l_color");
 	function f(){
-		numb += 5;
+		numb += 8;
 		$(".story-box").css('top','-'+numb+'px');
 	}
 	t = setInterval(f,1);
