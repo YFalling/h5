@@ -139,7 +139,6 @@ html, body{
 	-webkit-animation: s_btn 1s ease infinite;
 	animation: s_btn 1s ease infinite;
 	pointer-events: none;
-	-webkit-touch-callout: none;
 }
 
 /*  音乐  */
