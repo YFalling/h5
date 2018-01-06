@@ -126,6 +126,7 @@ html, body{
     height: 4rem;
 	left: 0;
 	bottom: 1.6rem;
+	z-index: 9999;
 }
 .s-btn{
 	position: relative;
@@ -138,7 +139,6 @@ html, body{
 	border: 1px solid rgba(0,0,0,0);
 	-webkit-animation: s_btn 1s ease infinite;
 	animation: s_btn 1s ease infinite;
-	pointer-events: none;
 }
 
 /*  音乐  */
