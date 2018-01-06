@@ -131,7 +131,7 @@ $.fn.longPress = function(fn) {
 var numb=0;
 $('.s-btn').longPress(function(){
 	function f(){
-		numb += 1;
+		numb += 5;
 		$(".story-box").css('top','-'+numb+'px');
 	}
 	t = setInterval(f,1);
