@@ -143,7 +143,9 @@ $('.s-btn').longPress(function(){
 		$(".story-box").css('transform','translateY(-'+numb+'px)');
 	}
 	t = setInterval(f,1);
-});
+})
+[webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitUserSelect='none';"];
+[webView stringByEvaluatingJavaScriptFromString:@"document.documentElement.style.webkitTouchCallout='none';"];
 </script>
 
 </body>
