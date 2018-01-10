@@ -14,7 +14,7 @@
 </head>
 <body>
 <img class="wechat-img" src="./css/img/wechat-img.png"/>
-<div class="bg_layer"><div class="bg_layer_img"></div><div class="bg_layer_color"></div></div>
+<div class="bg_layer"><div id＝"bgid" class="bg_layer_img"></div><div class="bg_layer_color"></div></div>
 
 <div class="wrapper">
 	<div class="story-line">
@@ -111,7 +111,7 @@ if(window.DeviceOrientationEvent){
 		
 		var orizontale = gamma/1.25,
 			verticale = beta/2.9;
-		$(".bg_layer_im").css('transform','translateX('+orizontale+'%) translateY('+verticale+'%)');
+		$(".bg_layer_img").css('transform','translateX('+orizontale+'%) translateY('+verticale+'%)');
 		
 	}, false);
 }else{ document.querySelector('body').innerHTML = '你的浏览器不支持哦~';}
@@ -136,6 +136,8 @@ var numb=0;
 $('.s-btn').longPress(function(){
 	$(".bg_layer_img").addClass("l_blur");
 	$(".wrapper").addClass("l_color");
+	$("#bgid").removeClass("bg_layer_img");
+	
 	function f(){
 		numb += 8;
 		$(".story-box").css('transform','translateY(-'+numb+'px)');
