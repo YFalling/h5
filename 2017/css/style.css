@@ -140,6 +140,11 @@ html, body{
 	-webkit-animation: s_btn 1s ease infinite;
 	animation: s_btn 1s ease infinite;
 	pointer-events: none;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
 }
 
 /*  音乐  */
