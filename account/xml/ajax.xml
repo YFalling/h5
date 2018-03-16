@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<account>
+<line>  - GOOGLE ---------------------------------------- YU -  </line>
+	<google>
+		<type>GOOGLE 1</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>密保：</o1>
+		<o2>手机：</o2>
+	</google>
+	<google>
+		<type>GOOGLE 2</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>手机：</o1>
+	</google>
+	<google>
+		<type>GOOGLE 3</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>手机：</o1>
+	</google>
+<line>  ------------------------------------------------------  </line>
+<line>  - QQ ---------------------------------------- YU -  </line>
+	<qq>
+		<type>QQ 1</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>密保：</o1>
+		<o2>微云：</o2>
+		<o3>财付通：</o3>
+	</qq>
+	<qq>
+		<type>QQ 2</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>密保：</o1>
+	</qq>
+	<qq>
+		<type>QQ 3</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>密保：</o1>
+	</qq>
+<line>  ------------------------------------------------------  </line>
+<line>  - BAIDU ---------------------------------------- YU -  </line>
+	<baidu>
+		<type>BAIDU 1</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</baidu>
+	<baidu>
+		<type>BAIDU 2</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</baidu>
+	<baidu>
+		<type>BAIDU 3</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</baidu>
+	<baidu>
+		<type>BAIDU 4</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</baidu>
+<line>  ------------------------------------------------------  </line>
+<line>  - APPLE ---------------------------------------- YU -  </line>
+	<apple>
+		<type>APPLE</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>密保：</o1>
+	</apple>
+<line>  ------------------------------------------------------  </line>
+<line>  - FACEBOOK ---------------------------------------- YU -  </line>
+	<facebook>
+		<type>FACEBOOK</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</facebook>
+<line>  ------------------------------------------------------  </line>
+<line>  - INSTAGRAM ---------------------------------------- YU -  </line>
+	<instagram>
+		<type>INSTAGRAM</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</instagram>
+<line>  ------------------------------------------------------  </line>
+<line>  - BILIBILI ---------------------------------------- YU -  </line>
+	<bilibili>
+		<type>BILIBILI</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>手机：</o1>
+		<o2>密保：</o2>
+	</bilibili>
+<line>  ------------------------------------------------------  </line>
+<line>  - PIXIV ---------------------------------------- YU -  </line>
+	<pixiv>
+		<type>PIXIV</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</pixiv>
+<line>  ------------------------------------------------------  </line>
+<line>  - TAOBAO ---------------------------------------- YU -  </line>
+	<taobao>
+		<type>淘宝</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>手机：</o1>
+	</taobao>
+<line>  ------------------------------------------------------  </line>
+<line>  - GODDADY ---------------------------------------- YU -  </line>
+	<goddady>
+		<type>GODDADY</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>手机：</o1>
+	</goddady>
+<line>  ------------------------------------------------------  </line>
+<line>  - WANGYI ---------------------------------------- YU -  </line>
+	<wangyi>
+		<type>网易 1</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>手机：</o1>
+	</wangyi>
+	<wangyi>
+		<type>网易 2</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>手机：</o1>
+	</wangyi>
+	<wangyi>
+		<type>网易 3</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>手机：</o1>
+	</wangyi>
+<line>  ------------------------------------------------------  </line>
+<line>  - GIT ---------------------------------------- YU -  </line>
+	<git>
+		<type>GIT 1</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</git>
+	<git>
+		<type>GIT 2</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</git>
+	<git>
+		<type>GIT 3</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</git>
+<line>  ------------------------------------------------------  </line>
+<line>  - CODING ---------------------------------------- YU -  </line>
+	<coding>
+		<type>CODING</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</coding>
+<line>  ------------------------------------------------------  </line>
+<line>  - WECHAT ---------------------------------------- YU -  </line>
+	<wechat>
+		<type>WECHAT 1</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>手机：</o1>
+	</wechat>
+	<wechat>
+		<type>WECHAT 2</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>手机：</o1>
+	</wechat>
+<line>  ------------------------------------------------------  </line>
+<line>  - TWITTER ---------------------------------------- YU -  </line>
+	<twitter>
+		<type>TWITTER</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</twitter>
+<line>  ------------------------------------------------------  </line>
+<line>  - FIREFOX ---------------------------------------- YU -  </line>
+	<firefox>
+		<type>FIREFOX</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>其他密码：</o1>
+	</firefox>
+<line>  ------------------------------------------------------  </line>
+<line>  - SANLIULING/360 ---------------------------------------- YU -  </line>
+	<sanliuling>
+		<type>360</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</sanliuling>
+<line>  ------------------------------------------------------  </line>
+
+<line>  - KUGOU ---------------------------------------- YU -  </line>
+	<kugou>
+		<type>酷狗</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</kugou>
+<line>  ------------------------------------------------------  </line>
+<line>  - DUONAO ---------------------------------------- YU -  </line>
+	<duonao>
+		<type>多瑙</type>
+		<account>账号：彼铭</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>密保：</o1>
+	</duonao>
+<line>  ------------------------------------------------------  </line>
+<line>  - tencentyun ---------------------------------------- YU -  </line>
+	<tencentyun>
+		<type>腾讯云</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</tencentyun>
+<line>  ------------------------------------------------------  </line>
+<line>  - LOFTER ---------------------------------------- YU -  </line>
+	<lofter>
+		<type>LOFTER</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>网站：</o1>
+	</lofter>
+<line>  ------------------------------------------------------  </line>
+<line>  - ZCOOL ---------------------------------------- YU -  </line>
+	<zcool>
+		<type>站酷</type>
+		<account>账号：彼铭</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</zcool>
+	<zcool>
+		<type>站酷</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</zcool>
+<line>  ------------------------------------------------------  </line>
+<line>  - SEGMENT FAULT ---------------------------------------- YU -  </line>
+	<segmentfault>
+		<type> SEGMENT FAULT   </type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>网站：</o1>
+	</segmentfault>
+<line>  ------------------------------------------------------  </line>
+<line>  - PAYPAL ---------------------------------------- YU -  </line>
+	<paypal>
+		<type>PAYPAL</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>其他：</o1>
+	</paypal>
+<line>  ------------------------------------------------------  </line>
+<line>  - YAHOO ---------------------------------------- YU -  </line>
+	<yahoo>
+		<type>YAHOO</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>手机：</o1>
+	</yahoo>
+<line>  ------------------------------------------------------  </line>
+<line>  - OUTLOOK ---------------------------------------- YU -  </line>
+	<outlook>
+		<type>OUTLOOK</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>手机：</o1>
+	</outlook>
+<line>  ------------------------------------------------------  </line>
+<line>  - BEHANCE ---------------------------------------- YU -  </line>
+	<behance>
+		<type>BEHANCE</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</behance>
+<line>  ------------------------------------------------------  </line>
+<line>  - TIETUKU ---------------------------------------- YU -  </line>
+	<tietuku>
+		<type>贴图库</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</tietuku>
+<line>  ------------------------------------------------------  </line>
+<line>  - ACGYIER ---------------------------------------- YU -  </line>
+	<acgyier>
+		<type>ACG调查小队</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>网站：</o1>
+	</acgyier>
+<line>  ------------------------------------------------------  </line>
+<line>  - JQUERY CHAJIANKU ---------------------------------------- YU -  </line>
+	<jquerychajianku>
+		<type>Jquery插件库</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</jquerychajianku>
+<line>  ------------------------------------------------------  </line>
+<line>  - WORDPRESS ---------------------------------------- YU -  </line>
+	<wordpress>
+		<type>WORDPRESS 1</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</wordpress>
+	<wordpress>
+		<type>WORDPRESS 2</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>网站：</o1>
+	</wordpress>
+	<wordpress>
+		<type>WORDPRESS 3</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>网站：</o1>
+	</wordpress>
+<line>  ------------------------------------------------------  </line>
+<line>  - XUNLEI ---------------------------------------- YU -  </line>
+	<xunlei>
+		<type>迅雷</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</xunlei>
+<line>  ------------------------------------------------------  </line>
+<line>  - ALI YUN ---------------------------------------- YU -  </line>
+	<aliyun>
+		<type>阿里云</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>手机：</o1>
+	</aliyun>
+<line>  ------------------------------------------------------  </line>
+<line>  - SANLIU KR ---------------------------------------- YU -  </line>
+	<sanliukr>
+		<type>36KR</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</sanliukr>
+<line>  ------------------------------------------------------  </line>
+<line>  - OPENSHIFT ---------------------------------------- YU -  </line>
+	<openshift>
+		<type>OPENSHIFT</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</openshift>
+	<openshift>
+		<type>OPENSHIFT</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</openshift>
+	<openshift>
+		<type>OPENSHIFT</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</openshift>
+<line>  ------------------------------------------------------  </line>
+<line>  - GT METRIX ---------------------------------------- YU -  </line>
+	<gtmetrix>
+		<type>GT METRIX</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</gtmetrix>
+<line>  ------------------------------------------------------  </line>
+<line>  - CLOUD FLARE ---------------------------------------- YU -  </line>
+	<cloudflare>
+		<type>CLOUD FLARE</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</cloudflare>
+<line>  ------------------------------------------------------  </line>
+<line>  - BSMART ---------------------------------------- YU -  </line>
+	<bsmart>
+		<type>BSMART</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</bsmart>
+<line>  ------------------------------------------------------  </line>
+<line>  - WALLHAVEN ---------------------------------------- YU -  </line>
+	<wallhaven>
+		<type>WALLHAVEN</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>网址：</o1>
+	</wallhaven>
+<line>  ------------------------------------------------------  </line>
+<line>  - QQ MAIL ---------------------------------------- YU -  </line>
+	<qqmail>
+		<type>QQ MAIL</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</qqmail>
+<line>  ------------------------------------------------------  </line>
+<line>  - YIYIWU ---------------------------------------- YU -  </line>
+	<yiyiwu>
+		<type>115网盘</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1>手机：</o1>
+	</yiyiwu>
+<line>  ------------------------------------------------------  </line>
+<line>  - CHENGTONG ---------------------------------------- YU -  </line>
+	<chengtong>
+		<type>诚通网盘 1</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</chengtong>
+	<chengtong>
+		<type>诚通网盘 2</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</chengtong>
+<line>  ------------------------------------------------------  </line>
+<line>  - TEAMVIEMER ---------------------------------------- YU -  </line>
+	<teamviemer>
+		<type>TEAMVIEMER 1</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</teamviemer>
+	<teamviemer>
+		<type>TEAMVIEMER 2</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</teamviemer>
+<line>  ------------------------------------------------------  </line>
+<line>  - CROSSFIRE EUROPE ---------------------------------------- YU -  </line>
+	<crossfireeurope>
+		<type>CROSSFIRE EUROPE</type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+	</crossfireeurope>
+<line>  ------------------------------------------------------  </line>
+
+
+<line>  -  ---------------------------------------- YU -  </line>
+	<OOOOO>
+		<type>     </type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1></o1>
+		<o2></o2>
+	</OOOOO>
+	<OOOOO>
+		<type>     </type>
+		<account>账号：</account>
+		<email>邮箱：</email>
+		<password>密码：</password>
+		<o1></o1>
+		<o2></o2>
+	</OOOOO>
+<line>  ------------------------------------------------------  </line>
+</account>

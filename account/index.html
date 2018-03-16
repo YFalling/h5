@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Account</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"/>
+<link rel="stylesheet" href="./css/style.css"/>
+</head>
+<body>
+
+<!-- 背景高斯模糊 -->
+<div class="bg_layer">
+	<div class="bg_layer_img" style="background:url('./img/bg.jpg') no-repeat center center;background-size:cover;"></div>
+</div>
+<div id="top_bar">
+	<div id="menu_logo">
+		<div class="menu" style="background:url('img/menu-icon.png') no-repeat center center; background-size:cover;"></div>
+		<div class="logo"><b>Y.FALLING</b></div>
+	</div>
+</div>
+<div id="sidebar" style="background:url('./img/bg.jpg') no-repeat center center;background-size:cover;">
+	<div class="t_h1">请输入账号类型</div>
+	<input onkeyup="getValue();" type="text" name="name" id="search"/>
+	<div id="target"></div>
+	<div class="btn_load">加载</div>
+	<div class="a_tag">
+		<ul>
+			<li type="google">GOOGLE</li>
+			<li type="git">GIT</li>
+			<li type="sanliuling">360</li>
+			<li type="qq">QQ</li>
+			<li type="baidu">百度</li>
+			<li type="sanliukr">36KR</li>
+			<li type="facebook">FACEBOOK</li>
+			<li type="instagram">INSTAGRAM</li>
+			<li type="bilibili">BILIBILI</li>
+			<li type="pivix">PIVIX</li>
+			<li type="taobao">淘宝</li>
+			<li type="goddady">GODDADY</li>
+			<li type="wangyi">网易</li>
+			<li type="wechat">微信</li>
+			<li type="lofter">LOFTER</li>
+			<li type="firefox">FIREFOX</li>
+			<li type="kugou">酷狗</li>
+			<li type="duonao">多瑙</li>
+			<li type="zcool">ZCOOL</li>
+			<li type="xunlei">迅雷</li>
+			<li type="apple">APPLE</li>
+			<li type="coding">CODING</li>
+			<li type="twitter">TWITTER</li>
+			<li type="tencentyun">腾讯云</li>
+			<li type="segmentfault">SEGMENT FAULT</li>
+			<li type="paypal">PAYPAL</li>
+			<li type="yahoo">YAHOO</li>
+			<li type="aliyun">阿里云</li>
+			<li type="outlook">OUTLOOK</li>
+			<li type="behance">BEHANCE</li>
+			<li type="acgyier">ACG调查小队</li>
+			<li type="jquerychajianku">JQUERY插件库</li>
+			<li type="wordpress">WORDPRESS</li>
+			<li type="openshift">OPENSHIFT</li>
+			<li type="gtmetrix">GT METRIX</li>
+			<li type="cloudflare">CLOUD FLARE</li>
+			<li type="bsmart">BSMART</li>
+			<li type="wallhaven">WALLHAVEN</li>
+			<li type="qqmail">QQ MAIL</li>
+			<li type="yiyiwu">115网盘</li>
+			<li type="chengtong">诚通网盘</li>
+			<li type="teamviemer">TEAMVIEMER</li>
+		</ul>
+	</div>
+	<div class="copyright">COPYRIGHT © 2017 A4STUDIO</div>
+</div>
+<div class="sidebar_layer"></div>
+
+<div id="wrapper">
+	<div id="container">
+		<div id="load"></div>
+	</div>
+</div>
+
+<!-- 引入JS文件 -->
+<script src="./js/jquery.js"></script>
+<script type="text/javascript">
+// 监听事件 - 禁止移动
+document.querySelector('body').addEventListener('touchmove', function (ev) {
+    event.preventDefault();
+});
+// 赋值
+function getValue(){
+	//获取id为nameId的节点
+	var inputEle = document.getElementById("search");
+	var targetEle =document.getElementById("target");
+	//获取value
+	var a = inputEle.value;
+	targetEle.innerHTML=a;
+}
+// 切换列表
+$(function(){
+	$(".menu").click(function(){
+		$("#sidebar").css("display","block");
+		$(".sidebar_layer").css("display","block");
+	})
+	
+	$(".sidebar_layer").click(function(){
+		$("#sidebar").css("display","none");
+		$(".sidebar_layer").css("display","none");
+	})
+})
+// TAG LIST
+$(".a_tag ul li").click(function(){
+	var li_type=$(this).attr("type");
+	var targetEle =document.getElementById("target");
+	targetEle.innerHTML=li_type;
+});
+</script>
+<script type="text/javascript">
+$(".btn_load").click(function(){
+$(function(){
+	$.ajax({
+		url:'xml/ajax.xml',
+		type: 'POST',
+		dataType: 'xml',
+		timeout: 1000,
+		cache: false,
+		error: function(xml){
+			alert('加载XML文档出错');
+		},
+		success: function(xml){
+			var ivalue = $("#target").text();
+			var frag=$("<ul/>");
+			var br="</br>";
+			$(xml).find(ivalue).each(function(i){
+				var type=$(this).children("type").text(),
+				email=$(this).children("email").text(),
+				account=$(this).children("account").text(),
+				password=$(this).children("password").text(),
+				o1=$(this).children("o1").text(),
+				o2=$(this).children("o2").text(),
+				o3=$(this).children("o3").text();
+				frag.append("<li><div class='box_title'><p>"+ type +"</P></div><div class='box_cont'><p>"
+				+ 
+					account +br+ 
+					email +br+ 
+					password +br+ 
+					o1 +br+ 
+					o2 +br+ 
+					o3 +br+"</p></div></li>");
+			});
+		frag.appendTo("#load");
+		}
+	  
+	});
+});
+});
+</script>
+
+</body>
+</html>
