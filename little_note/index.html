@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>匿名小纸条</title>
+<meta name="author" content="A4 STUDIO"/>
+<meta name="copyright" content="A4 STUDIO"/>
+<meta name="keywords" content="A4 STUDIO,女朋友,动漫,恋爱,喜欢"/>
+<meta name="description" content="A4 STUDIO - 专注创意设计与开发"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0"/>
+<link rel="icon" href="./css/img/a4studio.ico" mce_href="./css/img/a4studio.ico" type="image/x-icon"/>  
+<link rel="shortcut icon" href="./css/img/a4studio.ico" mce_href="./css/img/a4studio.ico" type="image/x-icon"/>
+<link rel="stylesheet" href="./css/swiper.min.css"/>
+<link rel="stylesheet" href="./css/style.css"/>
+</head>
+<body>
+<div style="position:absolute;width:300px;height:300px;left:0;top:0;">
+	<img src="./css/img/wechat.img.jpg"/>
+</div>
+<div class="bg_layer">
+	<div class="bg_layer_img"></div>
+</div>
+
+	<div class="music">
+		<i class="icon-music open" num="1"></i>
+		<audio src="./mp3/001.mp3" id="my_audio" loop="loop" autoplay="autoplay"></audio>
+	</div>
+	
+	<div class="img-qr-box close_qr">
+		<div class="img-qr"></div>
+	</div>
+	<div class="img-zz-box close_qr">
+		<div class="img-zz"></div>
+	</div>
+	
+	<div class="left-top">
+		<p>吃瓜群众(6666666)</p>
+	</div>
+	<div class="left-bottom">
+		<p>我的小纸条</p>
+	</div>
+	<div class="right-bottom">
+		<p>命定姻缘</p>
+	</div>
+	<div class="right-top2">
+		<img class="right-top2-img" src="./css/img/11.png"/>
+	</div>
+	<div class="right-bottom2">
+		<img class="right-bottom2-img" src="./css/img/22.png"/>
+	</div>
+	
+	<div class="bottom-bar">
+		<div class="bottom-bar-left"><div class="p-left">匿</div></div>
+		<div class="bottom-bar-right"><div class="p-fa">发送</div></div>
+		<div class="bottom-bar-center"><input class="shu-ru" type="text" name="fname"/></div>
+	</div>
+	
+	<div class="content-box">
+		
+		<div class="content">
+			<div class="content-ul">
+				<ul>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">哈哈哈哈哈哈哈</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">66666</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">这个真的能发送吗？</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">很帅</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">英俊潇洒</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">哈哈哈哈哈</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">可以</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">这个操作有点秀</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">小纸条</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">哈哈哈哈哈哈哈</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">不作死就不会死</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">啧啧啧</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">感觉有点不现实</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">......</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">真的不建议点发送，会后悔的</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">明天出来玩啊</div>
+					</li>
+					<li>
+						<div class="p-left">匿</div>
+						<div class="p-right">瞧瞧</div>
+					</li>
+				</ul>
+	
+
+			</div>
+		</div>
+	</div>
+		
+		
+
+
+<script src="./js/jquery-1.11.0.min.js"></script>
+<script src="./js/song.js"></script>
+<script type="text/javascript">
+function autoPlayMusic() {
+	function musicInBrowserHandler() {
+		musicPlay(true);
+		document.body.removeEventListener('touchstart', musicInBrowserHandler);
+	}
+	document.body.addEventListener('touchstart', musicInBrowserHandler);
+
+	function musicInWeixinHandler() {
+		musicPlay(true);
+		document.addEventListener("WeixinJSBridgeReady", function () {
+			musicPlay(true);
+		}, false);
+		document.removeEventListener('DOMContentLoaded', musicInWeixinHandler);
+	}
+	document.addEventListener('DOMContentLoaded', musicInWeixinHandler);
+}
+function musicPlay(isPlay) {
+	var audio = document.getElementById('my_audio');
+	if (isPlay && audio.paused) {
+		audio.play();
+	}
+	if (!isPlay && !audio.paused) {
+		audio.pause();
+	}
+}
+autoPlayMusic();
+
+$(".music").click(function(){
+	if($(".icon-music").attr("num") == "1"){
+		$(".icon-music").removeClass("open");
+		$(".icon-music").attr("num","2")
+		document.getElementById("my_audio").pause();
+		$(".music_text").html("关闭");
+		$(".music_text").addClass("show_hide");
+		setTimeout(musicHide,2000);
+	}else{
+		$(".icon-music").attr("num","1");
+		$(".icon-music").addClass("open");
+		document.getElementById("my_audio").play();
+		$(".music_text").html("开启");
+		$(".music_text").addClass("show_hide");
+		setTimeout(musicHide,2000);
+	}
+	function musicHide(){
+		$(".music_text").removeClass("show_hide");
+	}
+});
+
+//按钮点击操作
+//点击左上-打开二维码
+$(".left-top").click(function(){
+	$(".img-qr-box").removeClass("close_qr");
+	$(".img-qr-box").addClass("show_qr");
+});
+//点击左下-打开二维码
+//点击二维码关闭
+$(".img-qr-box").click(function(){
+	$(".img-qr-box").removeClass("show_qr");
+	$(".img-qr-box").addClass("close_qr");
+});
+
+//按钮点击操作
+$(".p-fa").click(function(){
+	$(".img-zz-box").removeClass("close_qr");
+	$(".img-zz-box").addClass("show_qr");
+});
+$(".left-bottom").click(function(){
+	$(".img-zz-box").removeClass("close_qr");
+	$(".img-zz-box").addClass("show_qr");
+});
+$(".right-bottom").click(function(){
+	$(".img-zz-box").removeClass("close_qr");
+	$(".img-zz-box").addClass("show_qr");
+});
+$(".img-zz-box").click(function(){
+	$(".img-zz-box").removeClass("show_qr");
+	$(".img-zz-box").addClass("close_qr");
+});
+</script>
+<script type="text/javascript">
+var my_audio = document.getElementById("my_audio");
+var p_all=$(".progress").width();
+var startX = startY = endX = endY = 0;  
+
+//暂停或播放
+function playPause(){
+	if(my_audio.paused){
+		my_audio.play();
+		$(".img img").addClass("rainbow");
+	}
+	else{
+		my_audio.pause();
+		$(".img img").removeClass("rainbow");
+	}
+}
+$(".btnpic").click(function(){
+	if($(this).attr("item")=="0"){
+		$(this).css("background-position","280px 0");
+		$(this).attr("item","1");
+	}else{
+		$(this).css("background-position","0 0");
+		$(this).attr("item","0");
+	}
+	
+	playPause();
+});
+</script>
+</body>
+</html>
